@@ -1,6 +1,6 @@
 site:
-  name: AstroAssetAllocation
-  site: 'https://astroassetallocation.vercel.app'
+  name: AstroAllocation
+  site: 'https://astroallocation.vercel.app'
   base: '/'
   trailingSlash: false
 
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroAssetAllocation
-    template: '%s — AstroAssetAllocation'
+    default: AstroAllocation
+    template: '%s — AstroAllocation'
   description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroAssetAllocation
+    site_name: AstroAllocation
     images:
       - url: '~/assets/images/default.png'
         width: 1200

@@ -1,14 +1,14 @@
 ---
 publishDate: 2023-08-06T00:00:00Z
-title: How to customize AstroAssetAllocation template to suit your branding
-excerpt: Personalize AstroAssetAllocation template for your brand. Our guide unlocks seamless customization steps for a unique online presence.
+title: How to customize AstroAllocation template to suit your branding
+excerpt: Personalize AstroAllocation template for your brand. Our guide unlocks seamless customization steps for a unique online presence.
 image: https://images.unsplash.com/photo-1546984575-757f4f7c13cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80
 tags:
   - astro
   - tailwind css
   - theme
 metadata:
-  canonical: https://astroassetallocation.vercel.app/how-to-customize-astroassetallocation-to-your-brand
+  canonical: https://astroallocation.vercel.app/how-to-customize-astroallocation-to-your-brand
 ---
 
 ## Congue justo vulputate nascetur convallis varius orci fringilla nulla pharetr
