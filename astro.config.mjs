@@ -41,6 +41,9 @@ export default defineConfig({
       include: {
         tabler: ['*'],
         'flat-color-icons': [
+          'like',
+          'engineering',
+          'pie-chart',
           'template',
           'gallery',
           'approval',

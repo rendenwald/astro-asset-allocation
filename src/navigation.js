@@ -24,35 +24,19 @@ export const headerData = {
       ],
     },
     {
-      text: 'Pages',
+      text: 'Strategies',
       links: [
         {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
+          text: 'Tactical',
+          href: getPermalink('/strategies/tactical-asset-allocation'),
         },
         {
-          text: 'Services',
-          href: getPermalink('/services'),
+          text: 'Buy&Hold',
+          href: getPermalink('/strategies/buy-and-hold'),
         },
         {
           text: 'Pricing',
           href: getPermalink('/pricing'),
-        },
-        {
-          text: 'About us',
-          href: getPermalink('/about'),
-        },
-        {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
         },
       ],
     },
