@@ -23,9 +23,8 @@
     @apply border-0 !important;
 }
 #chart {
-    max-width: 760px;
-    margin: 35px auto;
-    opacity: 0.9;
+    max-width: 900px;
+    margin: 0px auto;
   }
   
   .custom-tooltip {

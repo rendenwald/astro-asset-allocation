@@ -1,24 +1,13 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
+
 class ApexChart extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
     
-      series: [{
-        name: "HAA",
-        data: [[16.4, 5.4]],
-        color: '#4d3a96'
-      },{
-        name: "BAA",
-        data: [[16.4, 13.4]],
-        color: '#4d3a96'
-      },{
-        name: "6040",
-        data: [[21.7, 3]],
-        color: '#4576b5'
-      }],
+      series: props.series,
       options: {
         chart: {
           height: 350,
@@ -41,7 +30,7 @@ class ApexChart extends React.Component {
           labels: {
             formatter: function(val) {
               return parseFloat(val).toFixed(1) + "%"
-            }
+            },
           },
           stepSize: 1,
           decimalsInFloat: 0
@@ -54,7 +43,7 @@ class ApexChart extends React.Component {
           labels: {
             formatter: function(val) {
               return parseFloat(val).toFixed(0) + "%"
-            }
+            },
           },
         },
         markers: {
@@ -67,10 +56,10 @@ class ApexChart extends React.Component {
           custom: function({series, seriesIndex, dataPointIndex, w}) {
             return (
               '<div class="custom-tooltip">' +
-              "<div><span>" + 
+              "<a href='" + w.config.series[seriesIndex].href + "' ><div><span>" + 
               w.config.series[seriesIndex].name + 
               "</span>" +
-              "</div>" +
+              "</div></a>" +
               '<div class="apexcharts-tooltip-cagr">CAGR: ' + series[seriesIndex][dataPointIndex] + 
               "%</div>" +
               '<div class="apexcharts-tooltip-volatility">Annual Volatility: ' + w.config.series[seriesIndex].data[dataPointIndex][0] + 
@@ -92,7 +81,7 @@ class ApexChart extends React.Component {
     return (
       <div>
         <div id="chart">
-          <ReactApexChart options={this.state.options} series={this.state.series} type="scatter" height={350} />
+          <ReactApexChart options={this.state.options} series={this.state.series} type="scatter" height={450} />
         </div>
         <div id="html-dist"></div>
       </div>

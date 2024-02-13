@@ -1,6 +1,24 @@
 ---
 import '~/assets/styles/apexcharts.css';
 import ApexChart from './chart-apex.jsx';
+import { getPermalink } from '~/utils/permalinks';
+
+export const series = [{
+        name: "HAA",
+        data: [[16.4, 5.4]],
+        color: '#4d3a96',
+        href: getPermalink('/strategies/details/HAA')
+      },{
+        name: "BAA",
+        data: [[16.4, 13.4]],
+        color: '#4d3a96',
+        href: getPermalink('/strategies/details/BAA')
+      },{
+        name: "6040",
+        data: [[21.7, 3]],
+        color: '#4576b5',
+        href: getPermalink('/strategies/details/6040')
+      }]
 ---
 
-    <ApexChart client:only></ApexChart>
+    <ApexChart client:only series={series}></ApexChart>
