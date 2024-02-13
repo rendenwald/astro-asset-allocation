@@ -24,6 +24,10 @@ export const headerData = {
       ],
     },
     {
+      text: 'Portfolios',
+      href: getPermalink('strategies/portfolios'),
+    },
+    {
       text: 'Strategies',
       links: [
         {

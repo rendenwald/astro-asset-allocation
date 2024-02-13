@@ -148,6 +148,18 @@ export interface Price {
   ribbonTitle?: string;
 }
 
+export interface Strategy {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  price?: number;
+  period?: string;
+  items?: Array<Item>;
+  callToAction?: CallToAction;
+  hasRibbon?: boolean;
+  ribbonTitle?: string;
+}
+
 export interface Testimonial {
   title?: string;
   testimonial?: string;
@@ -225,6 +237,10 @@ export interface Stats extends Headline, Widget {
 
 export interface Pricing extends Headline, Widget {
   prices?: Array<Price>;
+}
+
+export interface Strategies extends Headline, Widget {
+  strategies?: Array<Strategy>;
 }
 
 export interface Testimonials extends Headline, Widget {

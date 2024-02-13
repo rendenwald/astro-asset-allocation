@@ -1,0 +1,112 @@
+---
+import Button from '~/components/ui/Button.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import type { Strategies } from '~/types';
+
+const {
+  title = '',
+  subtitle = '',
+  tagline = '',
+  strategies = [],
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as Strategies;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+  <div class="flex items-stretch justify-center">
+    <div class="grid grid-cols-3 gap-4 dark:text-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+      {
+        strategies &&
+          strategies.map(({ title, subtitle, price, period,  callToAction, hasRibbon = false, ribbonTitle }) => (
+            <div class="col-span-3 mx-auto flex w-full sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1">
+              {price && period && (
+                <div class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow px-6 py-8 flex w-full max-w-sm flex-col justify-between text-center">
+                  <div class="flex items-center">                
+                      <div
+                          class="w-14 h-14 rounded-full
+                              inline-flex items-center justify-center border  
+                              bg-white dark:bg-gray-800 text-gray-700 dark:text-white text-m font-bold border-slate-200  dark:border-slate-600"> 
+                          14.8% 
+                      </div>
+
+                <div class="grow ml-3 rtl:ml-0 rtl:mr-3 text-left">
+                  <p class="text-base font-semibold">Hybrid Asset Allocation</p>
+                  <p class="text-xs text-muted">Woulter J Keller</p>
+                </div>
+                </div>
+                {hasRibbon && ribbonTitle && (
+                    <div class="absolute right-[-5px] 2xl:right-[-8px] rtl:right-auto rtl:left-[-8px] rtl:2xl:left-[-10px] top-[-5px] 2xl:top-[-10px] z-[1] h-[100px] w-[100px] overflow-hidden text-right">
+                      <span class="absolute top-[19px] right-[-21px] rtl:right-auto rtl:left-[-21px] block w-full rotate-45 rtl:-rotate-45 bg-green-700 text-center text-[10px] font-bold uppercase leading-5 text-white shadow-[0_3px_10px_-5px_rgba(0,0,0,0.3)] before:absolute before:left-0 before:top-full before:z-[-1] before:border-[3px] before:border-r-transparent before:border-b-transparent before:border-l-green-800 before:border-t-green-800 before:content-[''] after:absolute after:right-0 after:top-full after:z-[-1] after:border-[3px] after:border-l-transparent after:border-b-transparent after:border-r-green-800 after:border-t-green-800 after:content-['']">
+                        {ribbonTitle}
+                      </span>
+                    </div>
+                  )}
+                  <div class="px-0 py-0 pt-4">
+                    {subtitle && <p class="sm:text-lg text-gray-600 dark:text-slate-400">{subtitle}</p>}
+                    <h3 class="flex items-center mt-4">
+                      <span aria-hidden="true" class="flex-grow bg-gray-200 rounded h-0.5"></span>
+                      <span class="mx-3 text-m font-medium">Statistics</span>
+                      <span aria-hidden="true" class="flex-grow bg-gray-200 rounded h-0.5"></span>
+                    </h3>
+                    <ul role="list" class="my-0 md:my-0 space-y-3 text-left text-m font-bold text-gray-800">
+                        <li class="flex items-start space-x-3 justify-between text-red-600">
+                          <span>CAGR</span><span class="text-lg">14.8%</span>
+                        </li>
+                        <li class="flex items-start space-x-3 justify-between">
+                          <span>Max DD</span><span class="text-lg">32.6%</span>
+                        </li>
+                      </ul>
+                      <div class="flex mt-3 space-x-3 justify-between mb-5 text-gray-600">
+                        <ul role="list" class="my-0 md:my-0 space-y-3 text-left">
+                        <li class="flex items-start space-x-3 justify-between">
+                          <span>Sharp ratio</span><span class="font-bold">14.8%</span>
+                        </li>
+                        <li class="flex items-start space-x-3 justify-between">
+                          <span>Martin ratio</span><span class="font-bold">14.8%</span>
+                        </li>
+                        <li class="flex items-start space-x-3 justify-between">
+                          <span>Sortino ratio</span><span class="font-bold">14.8%</span>
+                        </li>
+                        <li class="flex items-start space-x-3 justify-between">
+                          <span>UPI</span><span class="font-bold">32.6%</span>
+                        </li>
+                      </ul>
+                      <ul role="list" class="my-0 md:my-0 space-y-3 text-left">
+                        <li class="flex items-start space-x-3 justify-between">
+                          <span>YTD</span><span class="font-bold">14.8%</span>
+                        </li>
+                        <li class="flex items-start space-x-3 justify-between">
+                          <span>1 year</span><span class="font-bold">32.6%</span>
+                        </li>
+                        <li class="flex items-start space-x-3 justify-between">
+                          <span>3 years</span><span class="font-bold">14.8%</span>
+                        </li>
+                        <li class="flex items-start space-x-3 justify-between">
+                          <span>10 years</span><span class="font-bold">14.8%</span>
+                        </li>
+                      </ul>
+                      </div>
+                  </div>
+                  {callToAction && (
+                    <div class={`flex justify-center`}>
+                      {typeof callToAction === 'string' ? (
+                        <Fragment set:html={callToAction} />
+                      ) : (
+                        callToAction && callToAction.href && <Button {...hasRibbon ? { variant:'primary' } : {}} {...callToAction}/>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ))
+      }
+    </div>
+  </div>
+</WidgetWrapper>
