@@ -1,0 +1,55 @@
+.apexcharts-tooltip {
+    @apply bg-white dark:bg-gray-700 text-gray-500 dark:text-gray-400 border-0 rounded-lg shadow-lg !important;
+}
+
+.apexcharts-tooltip .apexcharts-tooltip-title {
+    @apply py-2 px-4 bg-gray-100 dark:bg-gray-600 border-b border-gray-200 dark:border-gray-500 !important;
+}
+
+.apexcharts-xaxistooltip {
+    @apply text-gray-500 border-0 bg-white dark:bg-gray-700 dark:text-gray-300 rounded-lg shadow-lg !important;
+}
+
+.apexcharts-tooltip .apexcharts-tooltip-text-y-value {
+    @apply dark:text-white;
+}
+
+.apexcharts-xaxistooltip-text {
+    @apply font-medium text-sm !important;
+}
+
+.apexcharts-xaxistooltip:before,
+.apexcharts-xaxistooltip:after {
+    @apply border-0 !important;
+}
+#chart {
+    max-width: 760px;
+    margin: 35px auto;
+    opacity: 0.9;
+  }
+  
+  .custom-tooltip {
+    padding: 2px 10px 5px;
+  }
+  
+  .custom-tooltip span{
+    font-size: 100%;
+    font-weight: 700;
+    color: #505050;
+    padding-bottom: 5px;
+  }
+  
+  .custom-tooltip .group:nth-child(3) {
+    border-top: 1px solid #e4e4e4;
+  }
+  
+  .apexcharts-tooltip-volatility {
+    font-size: 80%;
+    font-weight: light;
+  }
+  .apexcharts-tooltip-cagr {
+    font-size: 80%;
+    font-weight: light;
+    color: #638570;
+  }
+  
