@@ -10,6 +10,11 @@ class ApexChart extends React.Component {
       series: props.series,
       options: {
         chart: {
+          events: {
+            dataPointSelection: (event, chartContext, config) => {
+              window.open(config.w.config.series[config.seriesIndex].href,"_self");
+            }
+          },
           height: 350,
           type: 'scatter',
           zoom: {
@@ -31,6 +36,9 @@ class ApexChart extends React.Component {
             formatter: function(val) {
               return parseFloat(val).toFixed(1) + "%"
             },
+          },
+          tooltip: {
+            enabled: false
           },
           stepSize: 1,
           decimalsInFloat: 0
