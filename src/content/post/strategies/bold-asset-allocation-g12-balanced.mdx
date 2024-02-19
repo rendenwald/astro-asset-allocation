@@ -1,0 +1,90 @@
+---
+
+publishDate: 2024-02-14T00:00:00Z
+title: Bold Asset Allocation (BAA)
+excerpt: BAA combines a slow relative momentum with a fast absolute momentum and crash protection, based on the concept of the ‘canary’ universe, where we switch from our offensive to the defensive universe when any of the assets in the canary universe has negative absolute momentum.
+image: ~/assets/images/strategies/tactical-asset-allocation-dalle3.jpg
+category: Documentation
+tags:
+  - startegy
+  - tactical asset allocation
+---
+
+import DListItem from '~/components/ui/DListItem.astro';
+
+## Results / Backtests
+
+[Bold Asset Allocation - Balanced](./results/bold-asset-allocation-g12-balanced.html)<br />
+[Bold Asset Allocation - Aggressive](./results/bold-asset-allocation-g4-aggressive.html)<br />
+[Bold Asset Allocation - Overfitted](./results/bold-asset-allocation-overfitted.html)<br />
+
+## Overview
+
+Originally written by Wouter J. Keller in July 2022 in this paper: [Relative and Absolute Momentum in Times of Rising/Low Yields: Bold Asset Allocation (BAA)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4166845).
+
+BAA (Bold Asset Allocation) is a dynamic asset allocation strategy proposed by Wouter J. Keller in 2022. It is a very aggressive strategy that combines the previously proposed PAA, VAA, and DAA.
+
+The canary asset concept of DAA (Defensive Asset Allocation) is used to determine the composition ratio of offensive and defensive assets. However, if any of the four canary assets has negative momentum (breadth parameter B=1), the portfolio is composed only of safe assets, so about 60% of the past test period was composed of defensive assets.
+
+## Strategy features
+
+<DListItem dt="dual-momentum">
+  It uses both absolute and relative momentum. Historically, absolute momentum has been effective in minimizing losses, while relative momentum has helped generate better returns.
+</DListItem>
+<DListItem dt="13612W momentum filter">
+  The momentum scoring method as a standard for calculating momentum (1, 3, 6, 12 month average), which allows recent trends to be more weighted and reflected in the momentum calculation. <br />
+  [13612W Momentum description](../indicators/momentum#momentum-13612w).
+</DListItem>
+<DListItem dt="SMA12 momentum filter">
+  Slow momentum indicator based on month-end prices from last 13 periods. <br />
+  [SMA12 Momentum description](../indicators/momentum#momentum-sma12).
+</DListItem>
+<DListItem dt="cash protection">
+  In the presented strategy, an important role is played by the capital protection factor, which determines the extent to which the portfolio value should be invested in safe assets, in this case, bonds. <br />
+  [Cash protection description](../indicators/cash-protection).
+</DListItem>
+<DListItem dt="canary universe">
+</DListItem>
+
+### Summary of BAA G12 aka Balanced
+
+* Assets universes (3): offensive, defenssive, canary
+    * Offenssive universe (12): 
+        * ✨ **SPY** - US stock market Large Capitalisation - S&P500 - SPDR S&P 500 ETF
+        * ✨ **QQQ** - US stock market Large Capitalisation - Nasdaq 100 - Invesco QQQ ETF
+        * ✨ **IWM** - US stock market Small Capitalisation - Russell 2000 - iShares Russell 2000 ETF
+        * ✨ **VGK** - European stock market Large Capitalisation - Europe - Vanguard FTSE Europe ETF
+        * ✨ **EWJ** - Japan stock market Large Capitalisation - Japan - iShares MSCI Japan ETF
+        * ✨ **VWO** - Emerging markets Large Capitalisation - Emerging Markets - Vanguard Emerging Markets Stock Index Fund ETF
+        * ✨ **VNQ** - US Real Estate - Real Estate - Vanguard Real Estate Index Fund ETF
+        * ✨ **GLD** - Commodity - Gold - SPDR Gold Trust
+        * ✨ **HYG** - US Corporate intermediate-term bonds - US Corporate Bond - iShares iBoxx $ High Yield Corporate Bond ETF
+        * ✨ **LQD** - US all-term bonds - US Treasury Bond - iShares iBoxx $ Investment Grade Corporate Bond ETF
+        * ✨ **TLT** - US long-term bonds - US Treasury Bond - iShares 20+ Year Treasury Bond ETF
+        * ✨ **DBC** - Commodity - Diversified - Invesco DB Commodity Index Tracking Fund
+    * Defenssive universe (7): 
+        * ⭐ **BND** - Intermediate-Term bonds - Vanguard Total Bond Market Index Fund ETF
+        * ⭐ **LQD** - US all-term bonds - US Treasury Bond - iShares iBoxx $ Investment Grade Corporate Bond ETF
+        * ⭐ **IEF** - US intermediate-term bonds - US Treasury Bond - iShares 7-10 Year Treasury Bond ETF
+        * ⭐ **SHY** - US short-term bonds - US Treasury Bond - iShares 1-3 Year Treasury Bond ETF
+        * ⭐ **BIL** - short-term bonds - US Treasury Bond - SPDR Bloomberg 1-3 Month T-Bill ETF
+        * ⭐ **TIP** - US Treasury inflation linked bonds - iShares TIPS Bond ETF 
+        * ⭐ **DBC** - Commodity - Diversified - Invesco DB Commodity Index Tracking Fund
+    * Canary universe (4): 
+        * 🐦 **SPY** - US stock market Large Capitalisation - S&P500 - SPDR S&P 500 ETF
+        * 🐦 **QQQ** - US stock market Large Capitalisation - Nasdaq 100 - Invesco QQQ ETF
+        * 🐦 **VEA** - Developed markets ex US - Stocks - Vanguard Tax Managed Fund FTSE Developed Markets ETF
+        * 🐦 **BND** - Intermediate-Term bonds - Vanguard Total Bond Market Index Fund ETF
+* Momentum indicator - canary universe: [13612W](../indicators/momentum#momentum-13612w)
+* Momentum indicator - offenssive and defenssive universe: [SMA12](../indicators/momentum#momentum-sma12)
+* Rebalance period: montlhy
+* Top offenssive assets: 6
+* Top deffenssive assets: 3
+
+## Strategy rules
+
+1. Calulate 13612W momentum for canary assets.
+1. Calculate SMA12 momentum for offenssive and deffenssive assets.
+1. If all canary assets have positive momentum, select 6 assets from offenssive asstes with the highest relative momentum.
+If any of canary assets have negative momentum then select 3 asset from defenssive assets with highest relative momentum.
+1. Hold all positions until the last trading day of the next month.

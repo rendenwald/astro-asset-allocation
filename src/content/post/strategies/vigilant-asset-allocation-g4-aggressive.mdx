@@ -1,0 +1,54 @@
+---
+
+publishDate: 2024-02-14T00:00:00Z
+title: Vigilant Asset Allocation (VAA) - G4 - Aggressive
+excerpt: Dual-momentum based investment strategy with a vigorous crash protection and a fast momentum filter.
+image: ~/assets/images/strategies/tactical-asset-allocation-dalle3.jpg
+category: Documentation
+tags:
+  - startegy
+  - tactical asset allocation
+metadata:
+  canonical: https://astroallocation.vercel.app/astroallocation-template-in-depth
+---
+
+import DListItem from '~/components/ui/DListItem.astro';
+
+## Results / Backtests
+
+[Vigilant Asset Allocation G12 - Balanced](./results/vigilant-asset-allocation-g12-balanced.html)<br />
+[Vigilant Asset Allocation G4 - Aggressive](./results/vigilant-asset-allocation-g4-aggressive.html)
+
+## Overview
+
+Please see [Vigilant Asset Allocation G12 - Balanced -> Overview](./vigilant-asset-allocation-g12-balanced#overview)
+
+## Strategy features
+
+Please see [Vigilant Asset Allocation G12 - Balanced -> Strategy features](./vigilant-asset-allocation-g12-balanced#strategy-features)
+
+### Summary of VAA-G4 aka VAA Aggressive
+
+* Assets universes (2): offensive, defenssive
+    * Offenssive universe (4): 
+        * ✨ **SPY** - US stock market Large Capitalisation - S&P500 - SPDR S&P 500 ETF
+        * ✨ **VWO** - Emerging markets Large Capitalisation - Emerging Markets - Vanguard Emerging Markets Stock Index Fund ETF
+        * ✨ **VEA** - Developed markets ex US - Stocks - Vanguard Tax Managed Fund FTSE Developed Markets ETF
+        * ✨ **BND** - Intermediate-Term bonds - Vanguard Total Bond Market Index Fund ETF
+    * Defenssive universe (3): 
+        * ⭐ **LQD** - US all-term bonds - US Treasury Bond - iShares iBoxx $ Investment Grade Corporate Bond ETF
+        * ⭐ **IEF** - US intermediate-term bonds - US Treasury Bond - iShares 7-10 Year Treasury Bond ETF
+        * ⭐ **SHY** - US short-term bonds - US Treasury Bond - iShares 1-3 Year Treasury Bond ETF
+* Momentum indicator: [13612W](../indicators/momentum)
+* Rebalance period: montlhy
+* Top offenssive assets: 1
+* Top deffenssive assets: 1
+
+## Strategy rules
+
+1. Calculate momentum for offenssive and deffenssive assets.
+1. Get list of offenssive assets with positive momentum value.
+1. Get list of defenssive assets with positive momentum value.
+1. If all defenssive assets have positive momentum invest 100% in one offenssive asset with highest momentum value.
+If any defenssive asset have negative momentum invest 100% in single defenssive asset with highest momentum value.
+1. Hold all positions until the last trading day of the next month.

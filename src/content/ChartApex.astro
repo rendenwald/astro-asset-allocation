@@ -4,21 +4,36 @@ import ApexChart from './chart-apex.jsx';
 import { getPermalink } from '~/utils/permalinks';
 
 export const series = [{
-        name: "VAA",
-        data: [[16.4, 5.4]],
-        color: '#4d3a96',
-        href: getPermalink('/strategies/vigilant-asset-allocation', 'post')
-      },{
-        name: "BAA",
-        data: [[16.4, 13.4]],
-        color: '#4d3a96',
-        href: getPermalink('/strategies/baa', 'post')
-      },{
         name: "6040",
-        data: [[21.7, 3]],
+        data: [[12.53, 9.34]],
         color: '#4576b5',
         href: getPermalink('/strategies/6040', 'post')
-      }]
+      },{
+        name: "VAA G12 Balanced",
+        data: [[9.87, 8.79]],
+        color: '#4d3a96',
+        href: getPermalink('/strategies/vigilant-asset-allocation-g12-balanced', 'post')
+      },{
+        name: "VAA G4 Aggressive",
+        data: [[13.25, 8.67]],
+        color: '#4d3a96',
+        href: getPermalink('/strategies/vigilant-asset-allocation-g4-aggressive', 'post')
+      },{
+        name: "BAA G12 Balanced",
+        data: [[10.63, 9.99]],
+        color: '#4d3a96',
+        href: getPermalink('/strategies/bold-asset-allocation-g12-balanced', 'post')
+      },{
+        name: "BAA G4 Aggressive",
+        data: [[19.75, 11.84]],
+        color: '#4d3a96',
+        href: getPermalink('/strategies/bold-asset-allocation-g4-aggressive', 'post')
+      },{
+        name: "BAA Overfitted",
+        data: [[14.97, 10.40]],
+        color: '#4d3a96',
+        href: getPermalink('/strategies/bold-asset-allocation-overfitted', 'post')
+      },]
 ---
 
     <ApexChart client:only series={series}></ApexChart>
