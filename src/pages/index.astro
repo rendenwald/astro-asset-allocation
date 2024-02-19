@@ -3,14 +3,10 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import Timeline from '~/components/widgets/Timeline.astro';
 import StrategyCard from '~/components/widgets/StrategyCard.astro';
 
@@ -28,11 +24,14 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Strategies',
-        href: 'https://github.com/rendenwald/astroallocation',
-        target: '_blank',
-        icon: 'tabler:download',
+        href: '/strategies/portfolios',
+        icon: 'flat-color-icons:engineering',
       },
-      { text: 'Learn more', href: '#features' },
+      { 
+        text: 'Blog', 
+        href: '/blog',
+        icon: 'tabler:article',
+      },
     ]}
     image={{ src: '~/assets/images/hero.png', alt: 'AstroAllocation Hero Image' }}
   >
