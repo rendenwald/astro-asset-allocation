@@ -8,6 +8,12 @@ export const series = [{
         data: [[12.53, 9.34]],
         color: '#4576b5',
         href: getPermalink('/strategies/6040', 'post')
+      },
+      {
+        name: "PAA",
+        data: [[8.11, 9.29]],
+        color: '#4d3a96',
+        href: getPermalink('/strategies/protective-asset-allocation', 'post')
       },{
         name: "VAA G12 Balanced",
         data: [[9.87, 8.79]],
@@ -19,6 +25,16 @@ export const series = [{
         color: '#4d3a96',
         href: getPermalink('/strategies/vigilant-asset-allocation-g4-aggressive', 'post')
       },{
+        name: "DAA G12 Balanced",
+        data: [[11.34, 9.85]],
+        color: '#4d3a96',
+        href: getPermalink('/strategies/defensive-asset-allocation-g12-balanced', 'post')
+      },{
+        name: "DAA G12 Aggressive",
+        data: [[11.41, 9.74]],
+        color: '#4d3a96',
+        href: getPermalink('/strategies/defensive-asset-allocation-g12-aggressive', 'post')
+      },{
         name: "BAA G12 Balanced",
         data: [[10.63, 9.99]],
         color: '#4d3a96',
@@ -29,11 +45,72 @@ export const series = [{
         color: '#4d3a96',
         href: getPermalink('/strategies/bold-asset-allocation-g4-aggressive', 'post')
       },{
-        name: "BAA Overfitted",
-        data: [[14.97, 10.40]],
+        name: "BAA Overfitted I",
+        data: [[22.57, 10.61]],
         color: '#4d3a96',
         href: getPermalink('/strategies/bold-asset-allocation-overfitted', 'post')
-      },]
+      },{
+        name: "BAA Overfitted II",
+        data: [[22.57, 10.61]],
+        color: '#4d3a96',
+        href: getPermalink('/strategies/bold-asset-allocation-overfitted', 'post')
+      },{
+        name: "BAA Overfitted III",
+        data: [[22.48, 10.21]],
+        color: '#4d3a96',
+        href: getPermalink('/strategies/bold-asset-allocation-overfitted', 'post')
+      },
+      {
+        name: "PAA - daily",
+        data: [[8.20, 9.27]],
+        color: '#3a963c',
+        href: getPermalink('/strategies/protective-asset-allocation', 'post')
+      },{
+        name: "VAA G12 Balanced - daily",
+        data: [[10.55, 9.36]],
+        color: '#3a963c',
+        href: getPermalink('/strategies/vigilant-asset-allocation-g12-balanced', 'post')
+      },{
+        name: "VAA G4 Aggressive - daily",
+        data: [[14.41, 8.61]],
+        color: '#3a963c',
+        href: getPermalink('/strategies/vigilant-asset-allocation-g4-aggressive', 'post')
+      },{
+        name: "DAA G12 Balanced - daily",
+        data: [[11.75, 10.72]],
+        color: '#3a963c',
+        href: getPermalink('/strategies/defensive-asset-allocation-g12-balanced', 'post')
+      },{
+        name: "DAA G12 Aggressive - daily",
+        data: [[12.11, 11.19]],
+        color: '#3a963c',
+        href: getPermalink('/strategies/defensive-asset-allocation-g12-aggressive', 'post')
+      },{
+        name: "BAA G12 Balanced - daily",
+        data: [[10.57, 11.10]],
+        color: '#3a963c',
+        href: getPermalink('/strategies/bold-asset-allocation-g12-balanced', 'post')
+      },{
+        name: "BAA G4 Aggressive - daily",
+        data: [[19.72, 12.15]],
+        color: '#3a963c',
+        href: getPermalink('/strategies/bold-asset-allocation-g4-aggressive', 'post')
+      },{
+        name: "BAA Overfitted I - daily",
+        data: [[14.32, 13.28]],
+        color: '#3a963c',
+        href: getPermalink('/strategies/bold-asset-allocation-overfitted', 'post')
+      },{
+        name: "BAA Overfitted II - daily",
+        data: [[16.44, 12.7]],
+        color: '#3a963c',
+        href: getPermalink('/strategies/bold-asset-allocation-overfitted', 'post')
+      },{
+        name: "BAA Overfitted III - daily",
+        data: [[19.96, 14.94]],
+        color: '#3a963c',
+        href: getPermalink('/strategies/bold-asset-allocation-overfitted', 'post')
+      }]
 ---
 
     <ApexChart client:only series={series}></ApexChart>

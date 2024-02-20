@@ -1,0 +1,67 @@
+---
+
+publishDate: 2024-02-25T00:00:00Z
+title: Defensive Asset Allocation (DAA) - G12 Aggressive
+excerpt: Utilizing a 'canary' universe for enhanced crash protection and improved returns.
+image: ~/assets/images/strategies/tactical-asset-allocation-dalle3.jpg
+category: Documentation
+tags:
+  - startegy
+  - tactical asset allocation
+---
+
+import DListItem from '~/components/ui/DListItem.astro';
+
+## Results / Backtests
+
+[Defensive Asset Allocation G12 - Balanced](./results/defensive-asset-allocation-g12-balanced.html)<br />
+[Defensive Asset Allocation G12 - Balanced - daily](./results/defensive-asset-allocation-g12-balanced-daily-indicators.html)<br />
+[Defensive Asset Allocation G12 - Aggressive](./results/defensive-asset-allocation-g12-aggressive.html)<br />
+[Defensive Asset Allocation G12 - Aggressive - daily](./results/defensive-asset-allocation-g12-aggressive-daily-indicators.html)<br />
+
+## Overview
+
+Please see [Defensive Asset Allocation G12 - Balanced -> Overview](./defensive-asset-allocation-g12-balanced#overview)
+
+## Strategy features
+
+Please see [Defensive Asset Allocation G12 - Balanced -> Strategy features](./defensive-asset-allocation-g12-balanced#strategy-features)
+
+### Summary of DAA-G12 aka DAA Balanced
+
+* Assets universes (3): offensive, defensive, canary
+    * Offenssive universe (12): 
+        * ✨ **SPY** - US stock market Large Capitalisation - S&P500 - SPDR S&P 500 ETF
+        * ✨ **QQQ** - US stock market Large Capitalisation - Nasdaq 100 - Invesco QQQ ETF
+        * ✨ **IWM** - US stock market Small Capitalisation - Russell 2000 - iShares Russell 2000 ETF
+        * ✨ **VGK** - European stock market Large Capitalisation - Europe - Vanguard FTSE Europe ETF
+        * ✨ **EWJ** - Japan stock market Large Capitalisation - Japan - iShares MSCI Japan ETF
+        * ✨ **VWO** - Emerging markets Large Capitalisation - Emerging Markets - Vanguard Emerging Markets Stock Index Fund ETF
+        * ✨ **VNQ** - US Real Estate - Real Estate - Vanguard Real Estate Index Fund ETF
+        * ✨ **GLD** - Commodity - Gold - SPDR Gold Trust
+        * ✨ **GSG** - Commodity - Diversified - iShares S&P GSCI Commodity-Indexed Trust
+        * ✨ **HYG** - US Corporate intermediate-term bonds - US Corporate Bond - iShares iBoxx $ High Yield Corporate Bond ETF
+        * ✨ **LQD** - US all-term bonds - US Treasury Bond - iShares iBoxx $ Investment Grade Corporate Bond ETF
+        * ✨ **TLT** - US long-term bonds - US Treasury Bond - iShares 20+ Year Treasury Bond ETF
+    * Defensive universe (3): 
+        * ⭐ **LQD** - US all-term bonds - US Treasury Bond - iShares iBoxx $ Investment Grade Corporate Bond ETF
+        * ⭐ **IEF** - US intermediate-term bonds - US Treasury Bond - iShares 7-10 Year Treasury Bond ETF
+        * ⭐ **SHY** - US short-term bonds - US Treasury Bond - iShares 1-3 Year Treasury Bond ETF
+    * Canary universe (2): 
+        * 🐦 **SPY** - US stock market Large Capitalisation - S&P500 - SPDR S&P 500 ETF
+        * 🐦 **VWO** - Emerging markets Large Capitalisation - Emerging Markets - Vanguard Emerging 
+* Momentum indicator: [13612W](../indicators/momentum#momentum-13612w)
+* Rebalance period: montlhy
+* Top offenssive assets: 6
+* Top deffenssive assets: 1
+
+## Strategy rules
+
+1. Calculate momentum for offenssive and deffenssive assets.
+1. Get list of offenssive assets with positive momentum value.
+1. Get list of defensive assets with positive momentum value.
+1. Obtain the cash protection level. Determine your allocation to cash by finding the number of offenssive assets with a negative momentum score (n).
+    * If n = 2, 100% of the portfolio is invested in the Safe Asset with the highest momentum score
+    * If n = 1, invest 50% of the portfolio in the Safe Asset with the highest momentum score.  Invest 50% of the portfolio evenly in the 6 Risk Assets with the highest momentum score (1/6 per asset)
+    * If n=0,  invest 100% of the portfolio evenly in the 6 Risk Assets with the highest momentum score (1/6 per asset)
+1. Hold all positions until the last trading day of the next month.

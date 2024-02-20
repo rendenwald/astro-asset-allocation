@@ -142,17 +142,9 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
             )
           }
         </div>
-        {
-          actions?.length ? (
-            <span class="ml-4 rtl:ml-0 rtl:mr-4">
-              {actions.map((btnProps) => (
-                <Button {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto"/>
-              ))}
-            </span>
-          ) : (
-            ""
-          )
-        }
+          <span class="ml-4 rtl:ml-0 rtl:mr-4">
+            <a class="dbox-donation-page-button" href="https://donorbox.org/donate-to-create-new-strategies?default_interval=o" style="background: rgb(239, 100, 70); color: rgb(255, 255, 255); text-decoration: none; font-family: Verdana, sans-serif; display: flex; font-size: 16px; padding: 8px 24px; border-radius: 5px; gap: 8px; width: fit-content; line-height: 24px;"><img src="https://donorbox.org/images/white_logo.svg" style="">Donate</a>
+          </span>
       </div>
     </div>
   </div>

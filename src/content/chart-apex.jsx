@@ -47,6 +47,7 @@ class ApexChart extends React.Component {
           title: {
             text: 'CAGR (%)',
           },
+          forceNiceScale: true,
           tickAmount: 10,
           labels: {
             formatter: function(val) {

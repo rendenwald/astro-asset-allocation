@@ -1,0 +1,74 @@
+---
+
+publishDate: 2024-02-19T00:00:00Z
+title: Protective Asset Allocation (PAA)
+excerpt: A Simple Momentum-Based Alternative for Term Deposits.
+image: ~/assets/images/strategies/tactical-asset-allocation-dalle3.jpg
+category: Documentation
+tags:
+  - startegy
+  - tactical asset allocation
+---
+
+import DListItem from '~/components/ui/DListItem.astro';
+
+## Results / Backtests
+
+[Protective Asset Allocation](./results/protective-asset-allocation.html)<br />
+[Protective Asset Allocation - daily](./results/protective-asset-allocation-daily-indicators.html)<br />
+
+## Overview
+
+Originally written by Wouter J. Keller and Jan Willem Keuning in April 2016 in this paper: [Protective Asset Allocation (PAA): A Simple Momentum-Based Alternative for Term Deposits](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2759734).
+
+Simple dual-momentum model (called Protective Asset Allocation or PAA) with a vigorous “crash protection” which might fit this bill. It is a tactical variation on the traditional 60/40 stock/bond portfolio where the optimal stock/bond mix is determined by multi-market breadth using dual momentum. 
+
+## Strategy features
+
+<DListItem dt="dual-momentum">
+  It uses both absolute and relative momentum. Historically, absolute momentum has been effective in minimizing losses, while relative momentum has helped generate better returns.
+</DListItem>
+<DListItem dt="SMA12 momentum filter">
+  Slow momentum indicator based on month-end prices from last 13 periods. <br />
+  [SMA12 Momentum description](../indicators/momentum#momentum-sma12).
+</DListItem>
+<DListItem dt="cash protection">
+  In the presented strategy, an important role is played by the capital protection factor, which determines the extent to which the portfolio value should be invested in safe assets, in this case, bonds. <br />
+  [Cash protection description](../indicators/cash-protection).
+</DListItem>
+
+### Summary of PAA
+
+* Assets universes (2): offensive, defensive
+    * Offenssive universe (12): 
+        * ✨ **SPY** - US stock market Large Capitalisation - S&P500 - SPDR S&P 500 ETF
+        * ✨ **QQQ** - US stock market Large Capitalisation - Nasdaq 100 - Invesco QQQ ETF
+        * ✨ **IWM** - US stock market Small Capitalisation - Russell 2000 - iShares Russell 2000 ETF
+        * ✨ **VGK** - European stock market Large Capitalisation - Europe - Vanguard FTSE Europe ETF
+        * ✨ **EWJ** - Japan stock market Large Capitalisation - Japan - iShares MSCI Japan ETF
+        * ✨ **EEM** - Emerging markets Large and Mid Capitalisation - Emerging Markets - iShares MSCI Emerging Markets ETF
+        * ✨ **GLD** - Commodity - Gold - SPDR Gold Trust
+        * ✨ **GSG** - Commodity - Diversified - iShares S&P GSCI Commodity-Indexed Trust
+        * ✨ **IYR** - Real Estate - iShares US Real Estate ETF
+        * ✨ **HYG** - US Corporate intermediate-term bonds - US Corporate Bond - iShares iBoxx $ High Yield Corporate Bond ETF
+        * ✨ **LQD** - US all-term bonds - US Treasury Bond - iShares iBoxx $ Investment Grade Corporate Bond ETF
+        * ✨ **TLT** - US long-term bonds - US Treasury Bond - iShares 20+ Year Treasury Bond ETF
+    * Defensive universe (2): 
+        * ⭐ **IEF** - US intermediate-term bonds - US Treasury Bond - iShares 7-10 Year Treasury Bond ETF
+        * ⭐ **SHY** - US short-term bonds - US Treasury Bond - iShares 1-3 Year Treasury Bond ETF
+* Momentum indicator: [SMA12](../indicators/momentum#momentum-sma12)
+* Rebalance period: montlhy
+* Top offenssive assets: 6
+* Top deffenssive assets: 1
+
+## Strategy rules
+
+1. Calculate momentum for offenssive and deffenssive assets.
+1. Get list of offenssive assets with positive momentum value.
+1. Get list of defensive assets with positive momentum value.
+1. Determine the % of the portfolio that is allocated to the “safe” asset.  For this recommendation, the “safe” asset is IEF.  This is done by determining how many “good” and “bad” assets are in our list of funds. n=number of funds with a MOM > 0.
+    * If n >= 6, the entire portfolio is invested in the “safe” asset.
+    * If n \<= 7: <br />
+      The % of the portfolio invested in the “safe” asset = (12- n ) / 6
+      The remaining portfolio is divided equally among the 6 assets with the highest MOM score. 
+1. Hold all positions until the last trading day of the next month.
