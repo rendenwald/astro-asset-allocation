@@ -1,0 +1,154 @@
+{
+    "allocations": [
+        {
+            "date": "2024-02-01",
+            "allocations": [
+                {
+                    "name": "LQD",
+                    "full_name": "iShares iBoxx $ Inv Grade Corporate Bond ETF",
+                    "allocation": "50%"
+                },
+                {
+                    "name": "AGG",
+                    "full_name": "iShares Core US Aggregate Bond ETF",
+                    "allocation": "50%"
+                }
+            ]
+        },
+        {
+            "date": "2024-01-02",
+            "allocations": [
+                {
+                    "name": "QLD",
+                    "full_name": "ProShares Ultra QQQ (x2 leveraged)",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-12-01",
+            "allocations": [
+                {
+                    "name": "QLD",
+                    "full_name": "ProShares Ultra QQQ (x2 leveraged)",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-11-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-10-02",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-09-01",
+            "allocations": [
+                {
+                    "name": "DBC",
+                    "full_name": "Invesco DB Commodity Index Tracking Fund",
+                    "allocation": "50%"
+                },
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "50%"
+                }
+            ]
+        },
+        {
+            "date": "2023-08-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "50%"
+                },
+                {
+                    "name": "LQD",
+                    "full_name": "iShares iBoxx $ Inv Grade Corporate Bond ETF",
+                    "allocation": "50%"
+                }
+            ]
+        },
+        {
+            "date": "2023-07-03",
+            "allocations": [
+                {
+                    "name": "QLD",
+                    "full_name": "ProShares Ultra QQQ (x2 leveraged)",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-06-01",
+            "allocations": [
+                {
+                    "name": "QLD",
+                    "full_name": "ProShares Ultra QQQ (x2 leveraged)",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-05-01",
+            "allocations": [
+                {
+                    "name": "QLD",
+                    "full_name": "ProShares Ultra QQQ (x2 leveraged)",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-04-03",
+            "allocations": [
+                {
+                    "name": "QLD",
+                    "full_name": "ProShares Ultra QQQ (x2 leveraged)",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-03-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-02-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "50%"
+                },
+                {
+                    "name": "LQD",
+                    "full_name": "iShares iBoxx $ Inv Grade Corporate Bond ETF",
+                    "allocation": "50%"
+                }
+            ]
+        }
+    ]
+}

@@ -11,6 +11,8 @@ tags:
 ---
 
 import DListItem from '~/components/ui/DListItem.astro';
+import AllocationRecent from '~/components/widgets/AllocationRecent.astro';
+import stats from '~/pages/strategies/results/vigilant-asset-allocation-g4-aggressive-website.json';
 
 ## Results / Backtests
 
@@ -52,3 +54,7 @@ Please see [Vigilant Asset Allocation G12 - Balanced -> Strategy features](./vig
 1. If all defensive assets have positive momentum invest 100% in one offenssive asset with highest momentum value.
 If any defensive asset have negative momentum invest 100% in single defensive asset with highest momentum value.
 1. Hold all positions until the last trading day of the next month.
+
+## Allocation for recent 13 periods
+
+<AllocationRecent stats={stats.allocations} />

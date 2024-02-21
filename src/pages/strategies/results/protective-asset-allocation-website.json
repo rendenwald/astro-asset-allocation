@@ -1,0 +1,434 @@
+{
+    "allocations": [
+        {
+            "date": "2024-02-01",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "IWM",
+                    "full_name": "iShares Russell 2000 ETF",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "EWJ",
+                    "full_name": "iShares MSCI Japan ETF",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "VGK",
+                    "full_name": "Vanguard European Stock Index Fund ETF",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "HYG",
+                    "full_name": "iShares iBoxx $ High Yield Corporate Bond ETF",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "33.3%"
+                }
+            ]
+        },
+        {
+            "date": "2024-01-02",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "IWM",
+                    "full_name": "iShares Russell 2000 ETF",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "EWJ",
+                    "full_name": "iShares MSCI Japan ETF",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "VGK",
+                    "full_name": "Vanguard European Stock Index Fund ETF",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "GLD",
+                    "full_name": "SPDR Gold Shares",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "33.3%"
+                }
+            ]
+        },
+        {
+            "date": "2023-12-01",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "EWJ",
+                    "full_name": "iShares MSCI Japan ETF",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "VGK",
+                    "full_name": "Vanguard European Stock Index Fund ETF",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "EEM",
+                    "full_name": "iShares MSCI Emerging Markets ETF",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "GLD",
+                    "full_name": "SPDR Gold Shares",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "66.7%"
+                }
+            ]
+        },
+        {
+            "date": "2023-11-01",
+            "allocations": [
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-10-02",
+            "allocations": [
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-09-01",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "EWJ",
+                    "full_name": "iShares MSCI Japan ETF",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "VGK",
+                    "full_name": "Vanguard European Stock Index Fund ETF",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "GLD",
+                    "full_name": "SPDR Gold Shares",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "GSG",
+                    "full_name": "iShares S&P GSCI Commodity-Indexed Trust ETF",
+                    "allocation": "11%"
+                },
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "33.3%"
+                }
+            ]
+        },
+        {
+            "date": "2023-08-01",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "13%"
+                },
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "13%"
+                },
+                {
+                    "name": "IWM",
+                    "full_name": "iShares Russell 2000 ETF",
+                    "allocation": "13%"
+                },
+                {
+                    "name": "EWJ",
+                    "full_name": "iShares MSCI Japan ETF",
+                    "allocation": "13%"
+                },
+                {
+                    "name": "VGK",
+                    "full_name": "Vanguard European Stock Index Fund ETF",
+                    "allocation": "13%"
+                },
+                {
+                    "name": "EEM",
+                    "full_name": "iShares MSCI Emerging Markets ETF",
+                    "allocation": "13%"
+                },
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "16.7%"
+                }
+            ]
+        },
+        {
+            "date": "2023-07-03",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "8%"
+                },
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "8%"
+                },
+                {
+                    "name": "IWM",
+                    "full_name": "iShares Russell 2000 ETF",
+                    "allocation": "8%"
+                },
+                {
+                    "name": "EWJ",
+                    "full_name": "iShares MSCI Japan ETF",
+                    "allocation": "8%"
+                },
+                {
+                    "name": "VGK",
+                    "full_name": "Vanguard European Stock Index Fund ETF",
+                    "allocation": "8%"
+                },
+                {
+                    "name": "GLD",
+                    "full_name": "SPDR Gold Shares",
+                    "allocation": "8%"
+                },
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "50%"
+                }
+            ]
+        },
+        {
+            "date": "2023-06-01",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "2%"
+                },
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "2%"
+                },
+                {
+                    "name": "EWJ",
+                    "full_name": "iShares MSCI Japan ETF",
+                    "allocation": "2%"
+                },
+                {
+                    "name": "VGK",
+                    "full_name": "Vanguard European Stock Index Fund ETF",
+                    "allocation": "2%"
+                },
+                {
+                    "name": "GLD",
+                    "full_name": "SPDR Gold Shares",
+                    "allocation": "2%"
+                },
+                {
+                    "name": "HYG",
+                    "full_name": "iShares iBoxx $ High Yield Corporate Bond ETF",
+                    "allocation": "2%"
+                },
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "83.3%"
+                }
+            ]
+        },
+        {
+            "date": "2023-05-01",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "8%"
+                },
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "8%"
+                },
+                {
+                    "name": "EWJ",
+                    "full_name": "iShares MSCI Japan ETF",
+                    "allocation": "8%"
+                },
+                {
+                    "name": "VGK",
+                    "full_name": "Vanguard European Stock Index Fund ETF",
+                    "allocation": "8%"
+                },
+                {
+                    "name": "GLD",
+                    "full_name": "SPDR Gold Shares",
+                    "allocation": "8%"
+                },
+                {
+                    "name": "LQD",
+                    "full_name": "iShares iBoxx $ Inv Grade Corporate Bond ETF",
+                    "allocation": "8%"
+                },
+                {
+                    "name": "IEF",
+                    "full_name": "iShares 7-10 Year Treasury Bond ETF",
+                    "allocation": "50%"
+                }
+            ]
+        },
+        {
+            "date": "2023-04-03",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "EWJ",
+                    "full_name": "iShares MSCI Japan ETF",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "VGK",
+                    "full_name": "Vanguard European Stock Index Fund ETF",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "GLD",
+                    "full_name": "SPDR Gold Shares",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "HYG",
+                    "full_name": "iShares iBoxx $ High Yield Corporate Bond ETF",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "66.7%"
+                }
+            ]
+        },
+        {
+            "date": "2023-03-01",
+            "allocations": [
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-02-01",
+            "allocations": [
+                {
+                    "name": "IWM",
+                    "full_name": "iShares Russell 2000 ETF",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "EWJ",
+                    "full_name": "iShares MSCI Japan ETF",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "VGK",
+                    "full_name": "Vanguard European Stock Index Fund ETF",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "EEM",
+                    "full_name": "iShares MSCI Emerging Markets ETF",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "GLD",
+                    "full_name": "SPDR Gold Shares",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "HYG",
+                    "full_name": "iShares iBoxx $ High Yield Corporate Bond ETF",
+                    "allocation": "5%"
+                },
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "66.7%"
+                }
+            ]
+        }
+    ]
+}

@@ -11,6 +11,8 @@ tags:
 ---
 
 import DListItem from '~/components/ui/DListItem.astro';
+import AllocationRecent from '~/components/widgets/AllocationRecent.astro';
+import stats from '~/pages/strategies/results/bold-asset-allocation-g12-balanced-website.json';
 
 ## Results / Backtests
 
@@ -96,3 +98,7 @@ The canary asset concept of DAA (Defensive Asset Allocation) is used to determin
 1. If all canary assets have positive momentum, select 6 assets from offenssive asstes with the highest relative momentum.
 If any of canary assets have negative momentum then select 3 asset from defensive assets with highest relative momentum.
 1. Hold all positions until the last trading day of the next month.
+
+## Allocation for recent 13 periods
+
+<AllocationRecent stats={stats.allocations} />

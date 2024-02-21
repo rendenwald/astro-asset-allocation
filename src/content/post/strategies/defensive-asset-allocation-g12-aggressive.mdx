@@ -3,7 +3,7 @@
 publishDate: 2024-02-25T00:00:00Z
 title: Defensive Asset Allocation (DAA) - G12 Aggressive
 excerpt: Utilizing a 'canary' universe for enhanced crash protection and improved returns.
-image: ~/assets/images/strategies/defensive-asset-allocation.jpg
+image: ~/assets/images/strategies/defensive-asset-allocation.jpeg
 category: Documentation
 tags:
   - startegy
@@ -11,6 +11,8 @@ tags:
 ---
 
 import DListItem from '~/components/ui/DListItem.astro';
+import AllocationRecent from '~/components/widgets/AllocationRecent.astro';
+import stats from '~/pages/strategies/results/defensive-asset-allocation-g12-aggressive-website.json';
 
 ## Results / Backtests
 
@@ -65,3 +67,7 @@ Please see [Defensive Asset Allocation G12 - Balanced -> Strategy features](./de
     * If n = 1, invest 50% of the portfolio in the Safe Asset with the highest momentum score.  Invest 50% of the portfolio evenly in the 6 Risk Assets with the highest momentum score (1/6 per asset)
     * If n=0,  invest 100% of the portfolio evenly in the 6 Risk Assets with the highest momentum score (1/6 per asset)
 1. Hold all positions until the last trading day of the next month.
+
+## Allocation for recent 13 periods
+
+<AllocationRecent stats={stats.allocations} />

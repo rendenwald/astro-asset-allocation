@@ -11,6 +11,8 @@ tags:
 ---
 
 import DListItem from '~/components/ui/DListItem.astro';
+import AllocationRecent from '~/components/widgets/AllocationRecent.astro';
+import stats from '~/pages/strategies/results/protective-asset-allocation-website.json';
 
 ## Results / Backtests
 
@@ -72,3 +74,7 @@ Simple dual-momentum model (called Protective Asset Allocation or PAA) with a vi
       The % of the portfolio invested in the “safe” asset = (12- n ) / 6
       The remaining portfolio is divided equally among the 6 assets with the highest MOM score. 
 1. Hold all positions until the last trading day of the next month.
+
+## Allocation for recent 13 periods
+
+<AllocationRecent stats={stats.allocations} />

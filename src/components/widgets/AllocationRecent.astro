@@ -1,0 +1,40 @@
+---
+const props = Astro.props;
+---
+
+<div>
+    <table class="table-auto">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Allocation</th>
+          </tr>
+        </thead>
+        <tbody>
+            {
+              props.stats.map(({ date, allocations }) => (
+                <tr>
+                    <td class="p-2px text-lg leading-6 font-medium">{date}</td>
+                    <td class="p-2px">
+                    <ul class="list-none overflow-hidden sm:rounded-md p-0 m-0 not-prose">
+                    {
+                        allocations.map(({ name, full_name, allocation }) => (
+                            <li class="m-2px">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <span class="text-lg leading-6 font-medium">{name}</span>
+                                        <span class="text-sm"> - {full_name}</span>
+                                    </div>
+                                    <span class="mx-2 font-medium">{allocation}</span>
+                                </div>
+                            </li>
+                        ))
+                    }
+                    </ul>
+                    </td>
+                </tr>
+              ))
+            }
+        </tbody>
+      </table>
+</div>

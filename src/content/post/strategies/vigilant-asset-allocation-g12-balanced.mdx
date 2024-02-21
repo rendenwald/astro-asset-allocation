@@ -11,6 +11,8 @@ tags:
 ---
 
 import DListItem from '~/components/ui/DListItem.astro';
+import AllocationRecent from '~/components/widgets/AllocationRecent.astro';
+import stats from '~/pages/strategies/results/vigilant-asset-allocation-g12-balanced-website.json';
 
 ## Results / Backtests
 
@@ -78,3 +80,7 @@ VAA (Vigilant Asset Allocation) is similar to the other strategies presented by 
     * If n=1, 25% of the portfolio in the Safe Asset with the highest momentum score.  Invest 75% of the portfolio evenly in the 5 Risk Assets with the highest momentum score (1/5 per asset)
     * If n=0,  invest 100% of the portfolio evenly in the 5 Risk Assets with the highest momentum score (1/5 per asset)
 1. Hold all positions until the last trading day of the next month.
+
+## Allocation for recent 13 periods
+
+<AllocationRecent stats={stats.allocations} />

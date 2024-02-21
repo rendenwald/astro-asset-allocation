@@ -1,0 +1,209 @@
+{
+    "allocations": [
+        {
+            "date": "2024-02-01",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "EWJ",
+                    "full_name": "iShares MSCI Japan ETF",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "LQD",
+                    "full_name": "iShares iBoxx $ Inv Grade Corporate Bond ETF",
+                    "allocation": "25%"
+                }
+            ]
+        },
+        {
+            "date": "2024-01-02",
+            "allocations": [
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "IWM",
+                    "full_name": "iShares Russell 2000 ETF",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "VNQ",
+                    "full_name": "Vanguard Real Estate Index Fund ETF\n",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "LQD",
+                    "full_name": "iShares iBoxx $ Inv Grade Corporate Bond ETF",
+                    "allocation": "25%"
+                }
+            ]
+        },
+        {
+            "date": "2023-12-01",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "EWJ",
+                    "full_name": "iShares MSCI Japan ETF",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "LQD",
+                    "full_name": "iShares iBoxx $ Inv Grade Corporate Bond ETF",
+                    "allocation": "25%"
+                }
+            ]
+        },
+        {
+            "date": "2023-11-01",
+            "allocations": [
+                {
+                    "name": "CASH",
+                    "full_name": "USD",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-10-02",
+            "allocations": [
+                {
+                    "name": "CASH",
+                    "full_name": "USD",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-09-01",
+            "allocations": [
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-08-01",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "25%"
+                }
+            ]
+        },
+        {
+            "date": "2023-07-03",
+            "allocations": [
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "LQD",
+                    "full_name": "iShares iBoxx $ Inv Grade Corporate Bond ETF",
+                    "allocation": "75%"
+                }
+            ]
+        },
+        {
+            "date": "2023-06-01",
+            "allocations": [
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-05-01",
+            "allocations": [
+                {
+                    "name": "QQQ",
+                    "full_name": "Invesco QQQ Trust",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "VGK",
+                    "full_name": "Vanguard European Stock Index Fund ETF",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "LQD",
+                    "full_name": "iShares iBoxx $ Inv Grade Corporate Bond ETF",
+                    "allocation": "50%"
+                }
+            ]
+        },
+        {
+            "date": "2023-04-03",
+            "allocations": [
+                {
+                    "name": "IEF",
+                    "full_name": "iShares 7-10 Year Treasury Bond ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-03-01",
+            "allocations": [
+                {
+                    "name": "VGK",
+                    "full_name": "Vanguard European Stock Index Fund ETF",
+                    "allocation": "25%"
+                }
+            ]
+        },
+        {
+            "date": "2023-02-01",
+            "allocations": [
+                {
+                    "name": "VGK",
+                    "full_name": "Vanguard European Stock Index Fund ETF",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "GLD",
+                    "full_name": "SPDR Gold Shares",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "LQD",
+                    "full_name": "iShares iBoxx $ Inv Grade Corporate Bond ETF",
+                    "allocation": "50%"
+                }
+            ]
+        }
+    ]
+}

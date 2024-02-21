@@ -11,6 +11,8 @@ tags:
 ---
 
 import DListItem from '~/components/ui/DListItem.astro';
+import AllocationRecent from '~/components/widgets/AllocationRecent.astro';
+import stats from '~/pages/strategies/results/bold-asset-allocation-overfitted-1-website.json';
 
 ## Results / Backtests
 
@@ -38,3 +40,7 @@ Second verion was presented by SBInvesting in this post: [Overfitted BAA Strateg
 Third verion was presented by SBInvesting in this post: [Overfitted BAA Strategy III](https://sbinvesting.tistory.com/128) at 16.03.2023.
 * It's modified BAA G4 Aggressive strategy it uses another one set of offenssive etfs: SPY, QLD, IYF and EEM.
 * Top defensive assets = 2.
+
+## Allocation for recent 13 periods
+
+<AllocationRecent stats={stats.allocations} />

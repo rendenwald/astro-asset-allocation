@@ -1,0 +1,164 @@
+{
+    "allocations": [
+        {
+            "date": "2024-02-01",
+            "allocations": [
+                {
+                    "name": "IWF",
+                    "full_name": "iShares Russell 1000 Growth ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2024-01-02",
+            "allocations": [
+                {
+                    "name": "IWF",
+                    "full_name": "iShares Russell 1000 Growth ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-12-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "33.3%"
+                },
+                {
+                    "name": "LQD",
+                    "full_name": "iShares iBoxx $ Inv Grade Corporate Bond ETF",
+                    "allocation": "33.3%"
+                },
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "33.3%"
+                }
+            ]
+        },
+        {
+            "date": "2023-11-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-10-02",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-09-01",
+            "allocations": [
+                {
+                    "name": "DBC",
+                    "full_name": "Invesco DB Commodity Index Tracking Fund",
+                    "allocation": "33.3%"
+                },
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "33.3%"
+                },
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "33.3%"
+                }
+            ]
+        },
+        {
+            "date": "2023-08-01",
+            "allocations": [
+                {
+                    "name": "IWF",
+                    "full_name": "iShares Russell 1000 Growth ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-07-03",
+            "allocations": [
+                {
+                    "name": "IWF",
+                    "full_name": "iShares Russell 1000 Growth ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-06-01",
+            "allocations": [
+                {
+                    "name": "IWF",
+                    "full_name": "iShares Russell 1000 Growth ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-05-01",
+            "allocations": [
+                {
+                    "name": "IWF",
+                    "full_name": "iShares Russell 1000 Growth ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-04-03",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "33.3%"
+                },
+                {
+                    "name": "LQD",
+                    "full_name": "iShares iBoxx $ Inv Grade Corporate Bond ETF",
+                    "allocation": "33.3%"
+                },
+                {
+                    "name": "SHY",
+                    "full_name": "iShares 1-3 Year Treasury Bond ETF",
+                    "allocation": "33.3%"
+                }
+            ]
+        },
+        {
+            "date": "2023-03-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-02-01",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "100%"
+                }
+            ]
+        }
+    ]
+}
