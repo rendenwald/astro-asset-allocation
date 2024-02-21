@@ -9,6 +9,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Timeline from '~/components/widgets/Timeline.astro';
 import StrategyCard from '~/components/widgets/StrategyCard.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'AstroAllocation —  database of tactical asset allocation strategies',
@@ -90,39 +91,40 @@ const metadata = {
   tagline="Strategies"
   strategies={[
     {
-      subtitle: 'HAA is a classic tactical asset allocation strategy mixed with cross-asset momentum (via TIPS) to improve performance.',
+      title: 'Bold Asset Allocation',
+      subtitle: 'G12 Balanced. Dual-momentum, crash protection and canary universe.',
       price: 45,
-      period: '/ Month',
+      author: 'Woulter J Keller',
       callToAction: {
-        text: 'Show more',
-        href: '#',
-      },
-      hasRibbon: true,
-      ribbonTitle: 'aggressive',
-    },
-    {
-      title: 'pro',
-      subtitle: 'Premium templates and advanced customization',
-      price: 15,
-      period: '/ Month',
-      callToAction: {
-        target: '_blank',
-        text: 'Upgrade to Pro',
-        href: '#',
+        text: 'Strategy',
+        href: getPermalink('strategies/bold-asset-allocation-g12-balanced', 'post'),
       },
       hasRibbon: true,
       ribbonTitle: 'popular',
     },
     {
-      title: 'Enterprise',
-      subtitle: 'Tailored solutions for large-scale projects',
-      price: 45,
-      period: '/ Month',
+      title: 'Bold Asset Allocation',
+      subtitle: 'G4 Aggressive. More risky version of well-known BAA strategy.',
+      price: 15,
+      author: 'Woulter J Keller',
       callToAction: {
-        target: '_blank',
-        text: 'Unlock Enterprise Features',
-        href: '#',
+        text: 'Strategy',
+        href: getPermalink('strategies/bold-asset-allocation-g4-aggressive', 'post'),
       },
+      hasRibbon: true,
+      ribbonTitle: 'aggressive',
+    },
+    {
+      title: 'Bold Asset Allocation',
+      subtitle: 'G4 Aggressive. More risky version of well-known BAA strategy.',
+      price: 45,
+      author: 'Woulter J Keller',
+      callToAction: {
+        text: 'Strategy',
+        href: getPermalink('strategies/protective-asset-allocation', 'post'),
+      },
+      hasRibbon: true,
+      ribbonTitle: 'defensive',
     },
   ]}
 />
@@ -187,7 +189,7 @@ const metadata = {
     title="AstroAllocation"
     tagline="Check out our strategies right now!"
     actions={[
-      { variant: "primary", text: 'Strategies', href: '/strategies/all', icon: 'tabler:assembly', },
+      { variant: "primary", text: 'Strategies', href: '/strategies/portfolios', icon: 'flat-color-icons:engineering', },
       { variant: "secondary", text: 'Blog', href: '/blog', icon: 'tabler:article', }
       ]}
   >

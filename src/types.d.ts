@@ -153,7 +153,7 @@ export interface Strategy {
   subtitle?: string;
   description?: string;
   price?: number;
-  period?: string;
+  author?: string;
   items?: Array<Item>;
   callToAction?: CallToAction;
   hasRibbon?: boolean;

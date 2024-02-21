@@ -1,7 +1,15 @@
 ---
 import '~/assets/styles/apexcharts.css';
+import WidgetWrapper from "~/components/ui/WidgetWrapper.astro";
 import ApexChart from './chart-apex.jsx';
 import { getPermalink } from '~/utils/permalinks';
+
+const {
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render("bg"),
+} = Astro.props;
 
 export const series = [{
         name: "6040",
@@ -113,4 +121,6 @@ export const series = [{
       }]
 ---
 
+<WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container} bg={bg}>
     <ApexChart client:only series={series}></ApexChart>
+</WidgetWrapper>
