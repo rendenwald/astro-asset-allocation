@@ -1,0 +1,90 @@
+---
+
+publishDate: 2024-02-28T00:00:00Z
+title: Hybrid Asset Allocation (HAA) - Balanced
+excerpt: Utilizing a 'canary' universe for enhanced crash protection and improved returns.
+image: ~/assets/images/strategies/hybrid-asset-allocation.jpeg
+category: Documentation
+tags:
+  - startegy
+  - tactical asset allocation
+---
+
+import DListItem from '~/components/ui/DListItem.astro';
+import AllocationRecent from '~/components/widgets/AllocationRecent.astro';
+import stats from '~/pages/strategies/results/hybrid-asset-allocation-balanced-website.json';
+
+## Results / Backtests
+
+[Hybrid Asset Allocation - Balanced](./results/hybrid-asset-allocation-balanced.html)<br />
+[Hybrid Asset Allocation - Balanced - daily](./results/hybrid-asset-allocation-balanced-daily-indicators.html)<br />
+[Hybrid Asset Allocation - Aggressive](./results/hybrid-asset-allocation-aggressive.html)<br />
+[Hybrid Asset Allocation - Aggressive - daily](./results/hybrid-asset-allocation-aggressive-daily-indicators.html)<br />
+
+## Overview
+
+Originally written by Wouter J. Keller and Jan Willem Keuning in August 2018 in this paper: [Breadth Momentum and the Canary Universe: Hybrid Asset Allocation (HAA)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3212862).
+
+Keller's Hybrid Asset Allocation tries to give you a good mix of different investments to keep your money safe and spread out. It also works to protect your investments when the market suddenly goes down. To do this, the strategy looks at how different assets are doing compared to each other and uses a special group of investments to decide if it's necessary to safeguard your portfolio from a big market drop.
+
+This strategy blends relative momentum with an innovative canary universe to gauge the necessity for crash protection.
+
+## Strategy features
+
+<DListItem dt="dual-momentum">
+  It uses both absolute and relative momentum. Historically, absolute momentum has been effective in minimizing losses, while relative momentum has helped generate better returns.
+</DListItem>
+<DListItem dt="13612W momentum filter">
+  The momentum scoring method as a standard for calculating momentum (1, 3, 6, 12 month average), which allows recent trends to be more weighted and reflected in the momentum calculation. <br />
+  [13612W Momentum description](../indicators/momentum#momentum-13612w).
+</DListItem>
+<DListItem dt="cash protection">
+  In the presented strategy, an important role is played by the capital protection factor, which determines the extent to which the portfolio value should be invested in safe assets, in this case, bonds. <br />
+  [Cash protection description](../indicators/cash-protection).
+</DListItem>
+<DListItem dt="canary universe">
+  Special set of assets that is used to determine condition of the market. 
+</DListItem>
+
+### Summary of HAA-G12 aka HAA Balanced
+
+* Assets universes (3): offensive, hybrid, canary
+    * Offenssive universe (12): 
+        * ✨ **SPY** - US stock market Large Capitalisation - S&P500 - SPDR S&P 500 ETF
+        * ✨ **QQQ** - US stock market Large Capitalisation - Nasdaq 100 - Invesco QQQ ETF
+        * ✨ **IWM** - US stock market Small Capitalisation - Russell 2000 - iShares Russell 2000 ETF
+        * ✨ **VGK** - European stock market Large Capitalisation - Europe - Vanguard FTSE Europe ETF
+        * ✨ **EWJ** - Japan stock market Large Capitalisation - Japan - iShares MSCI Japan ETF
+        * ✨ **VWO** - Emerging markets Large Capitalisation - Emerging Markets - Vanguard Emerging Markets Stock Index Fund ETF
+        * ✨ **VNQ** - US Real Estate - Real Estate - Vanguard Real Estate Index Fund ETF
+        * ✨ **GLD** - Commodity - Gold - SPDR Gold Trust
+        * ✨ **GSG** - Commodity - Diversified - iShares S&P GSCI Commodity-Indexed Trust
+        * ✨ **HYG** - US Corporate intermediate-term bonds - US Corporate Bond - iShares iBoxx $ High Yield Corporate Bond ETF
+        * ✨ **LQD** - US all-term bonds - US Treasury Bond - iShares iBoxx $ Investment Grade Corporate Bond ETF
+        * ✨ **TLT** - US long-term bonds - US Treasury Bond - iShares 20+ Year Treasury Bond ETF
+    * Hybrid universe (3): 
+        * ⭐ **LQD** - US all-term bonds - US Treasury Bond - iShares iBoxx $ Investment Grade Corporate Bond ETF
+        * ⭐ **IEF** - US intermediate-term bonds - US Treasury Bond - iShares 7-10 Year Treasury Bond ETF
+        * ⭐ **SHY** - US short-term bonds - US Treasury Bond - iShares 1-3 Year Treasury Bond ETF
+    * Canary universe (2): 
+        * 🐦 **SPY** - US stock market Large Capitalisation - S&P500 - SPDR S&P 500 ETF
+        * 🐦 **VWO** - Emerging markets Large Capitalisation - Emerging Markets - Vanguard Emerging 
+* Momentum indicator: [13612W](../indicators/momentum#momentum-13612w)
+* Rebalance period: montlhy
+* Top offenssive assets: 6
+* Top deffenssive assets: 1
+
+## Strategy rules
+
+1. Calculate momentum for offenssive and deffenssive assets.
+1. Get list of offenssive assets with positive momentum value.
+1. Get list of hybrid assets with positive momentum value.
+1. Obtain the cash protection level. Determine your allocation to cash by finding the number of offenssive assets with a negative momentum score (n).
+    * If n = 2, 100% of the portfolio is invested in the Safe Asset with the highest momentum score
+    * If n = 1, invest 50% of the portfolio in the Safe Asset with the highest momentum score.  Invest 50% of the portfolio evenly in the 6 Risk Assets with the highest momentum score (1/6 per asset)
+    * If n=0,  invest 100% of the portfolio evenly in the 6 Risk Assets with the highest momentum score (1/6 per asset)
+1. Hold all positions until the last trading day of the next month.
+
+## Allocation for recent 13 periods
+
+<AllocationRecent stats={stats.allocations} />

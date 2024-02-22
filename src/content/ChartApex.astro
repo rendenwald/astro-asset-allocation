@@ -67,6 +67,11 @@ export const series = [{
         data: [[22.48, 10.21]],
         color: '#4d3a96',
         href: getPermalink('/strategies/bold-asset-allocation-overfitted', 'post')
+      },{
+        name: "HAA Balanced",
+        data: [[12.08, 9.43]],
+        color: '#4d3a96',
+        href: getPermalink('/strategies/hybrid-asset-allocation-balanced', 'post')
       },
       {
         name: "PAA - daily",
@@ -118,7 +123,12 @@ export const series = [{
         data: [[19.96, 14.94]],
         color: '#3a963c',
         href: getPermalink('/strategies/bold-asset-allocation-overfitted', 'post')
-      }]
+      },{
+        name: "HAA Balanced - daily",
+        data: [[12.06, 9.57]],
+        color: '#3a963c',
+        href: getPermalink('/strategies/hybrid-asset-allocation-balanced', 'post')
+      },]
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container} bg={bg}>

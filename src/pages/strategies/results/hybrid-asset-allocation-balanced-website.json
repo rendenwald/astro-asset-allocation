@@ -1,0 +1,194 @@
+{
+    "allocations": [
+        {
+            "date": "2024-02-01",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "IWM",
+                    "full_name": "iShares Russell 2000 ETF",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "VEA",
+                    "full_name": "Vanguard Tax Managed Fund FTSE Developed Markets ETF",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "IEF",
+                    "full_name": "iShares 7-10 Year Treasury Bond ETF",
+                    "allocation": "25%"
+                }
+            ]
+        },
+        {
+            "date": "2024-01-02",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "IWM",
+                    "full_name": "iShares Russell 2000 ETF",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "VEA",
+                    "full_name": "Vanguard Tax Managed Fund FTSE Developed Markets ETF",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "VNQ",
+                    "full_name": "Vanguard Real Estate Index Fund ETF\n",
+                    "allocation": "25%"
+                }
+            ]
+        },
+        {
+            "date": "2023-12-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-11-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-10-02",
+            "allocations": [
+                {
+                    "name": "CASH",
+                    "full_name": "USD",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-09-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-08-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-07-03",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-06-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-05-01",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "VEA",
+                    "full_name": "Vanguard Tax Managed Fund FTSE Developed Markets ETF",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "VWO",
+                    "full_name": "Vanguard Emerging Markets Stock Index Fund ETF",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "IEF",
+                    "full_name": "iShares 7-10 Year Treasury Bond ETF",
+                    "allocation": "25%"
+                }
+            ]
+        },
+        {
+            "date": "2023-04-03",
+            "allocations": [
+                {
+                    "name": "SPY",
+                    "full_name": "SPDR S&P 500 ETF Trust",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "VEA",
+                    "full_name": "Vanguard Tax Managed Fund FTSE Developed Markets ETF",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "VWO",
+                    "full_name": "Vanguard Emerging Markets Stock Index Fund ETF",
+                    "allocation": "25%"
+                },
+                {
+                    "name": "IEF",
+                    "full_name": "iShares 7-10 Year Treasury Bond ETF",
+                    "allocation": "25%"
+                }
+            ]
+        },
+        {
+            "date": "2023-03-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        },
+        {
+            "date": "2023-02-01",
+            "allocations": [
+                {
+                    "name": "BIL",
+                    "full_name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+                    "allocation": "100%"
+                }
+            ]
+        }
+    ]
+}
