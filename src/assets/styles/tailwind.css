@@ -39,8 +39,8 @@
 }
 
 #header.scroll > div:first-child {
-  @apply bg-page md:bg-white/90 md:backdrop-blur-md;
-  box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
+  @apply bg-page bg-white/70 backdrop-blur-lg;
+  box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 26%);
 }
 .dark #header.scroll > div:first-child,
 #header.scroll.dark > div:first-child {
@@ -52,7 +52,6 @@
 } */
 
 #header.expanded nav {
-  position: fixed;
   top: 70px;
   left: 0;
   right: 0;
