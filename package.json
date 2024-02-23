@@ -19,6 +19,7 @@
     "@astrolib/analytics": "^0.5.0",
     "@astrolib/seo": "^1.0.0-beta.5",
     "@fontsource-variable/inter": "^5.0.16",
+    "@jop-software/astro-cookieconsent": "^3.0.0",
     "@nanostores/react": "^0.7.1",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
@@ -32,7 +33,8 @@
     "react-apexcharts": "^1.4.1",
     "react-dom": "^18.2.0",
     "typescript-esbuild": "^0.3.9",
-    "unpic": "^3.17.0"
+    "unpic": "^3.17.0",
+    "vanilla-cookieconsent": "^3.0.0"
   },
   "devDependencies": {
     "@astrojs/mdx": "^2.1.1",
