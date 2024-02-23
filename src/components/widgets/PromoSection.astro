@@ -1,0 +1,54 @@
+---
+import Image from '~/components/common/Image.astro';
+import Button from '~/components/ui/Button.astro';
+import type { CallToAction } from '~/types';
+
+export interface Props {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  content?: string;
+  actions?: string | CallToAction[];
+  image?: string | any; // TODO: find HTMLElementProps
+}
+
+const {
+  id,
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+  content = await Astro.slots.render('content'),
+  actions = await Astro.slots.render('actions'),
+  image = await Astro.slots.render('image'),
+} = Astro.props;
+---
+
+  <section class="mb-8">
+    <div class="p-0 flex overflow-hidden relative items-center py-5 py-md-0 bg-cover" style="background-image:url(/src/assets/images/promo-section.jpg);min-height:90vh">
+      <span class="bg-cover absolute top-0 left-0 w-max h-max bg-center bg-black opacity-6"></span>
+      <div class="mr-auto ml-auto max-w-6xl">
+        <div class="flex flex-wrap mt-0 justify-content-center">
+          <div class="col-lg-8 col-sm-9 text-center mx-auto">
+            <h1 class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-white">{title}</h1>
+            <p class="mt-4 text-xl md:text-2xl text-white mb-sm-6 mb-4 font-heading">The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. But the time is now to be okay to be the greatest you. Would you believe in what you believe in, if you were the only one who believed it?</p>
+            {
+              actions && (
+                <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
+                  {Array.isArray(actions) ? (
+                    actions.map((action) => (
+                      <div class="flex w-auto md:w-full">
+                        <Button {...(action || {})} class="sm:mb-0 bg-white w-full max-w-md" />
+                      </div>
+                    ))
+                  ) : (
+                    <Fragment set:html={actions} />
+                  )}
+                </div>
+              )
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

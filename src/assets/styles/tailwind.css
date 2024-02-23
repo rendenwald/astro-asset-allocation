@@ -87,3 +87,7 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+.promo-section {
+  background-image: url("/src/assets/images/promo-section.jpg");
+}

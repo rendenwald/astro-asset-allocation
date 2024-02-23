@@ -9,6 +9,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Timeline from '~/components/widgets/Timeline.astro';
 import StrategyCard from '~/components/widgets/StrategyCard.astro';
+import PromoSection from '~/components/widgets/PromoSection.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -18,6 +19,18 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+
+  <PromoSection
+  actions={[
+    {
+      text: 'Explore winning strategies',
+      href: '/strategies/portfolios',
+      icon: 'flat-color-icons:engineering',
+    },
+  ]}
+    title="Best strategies"
+  />
+
   <!-- Hero Widget ******************* -->
 
   <Hero
