@@ -1,0 +1,79 @@
+---
+
+publishDate: 2024-02-14T00:00:00Z
+title: Vigilant Asset Allocation (VAA) - G12 Balanced
+excerpt: Dual-momentum based investment strategy with a vigorous crash protection and a fast momentum filter.
+image: ~/assets/images/strategies/vigilant-asset-allocation-v2.jpg
+category: Documentation
+tags:
+  - startegy
+  - tactical asset allocation
+---
+
+import DListItem from '~/components/ui/DListItem.astro';
+import AllocationRecent from '~/components/widgets/AllocationRecent.astro';
+import stats from '~/pages/strategies/results/vigilant-asset-allocation-g12-balanced-website.json';
+
+## Overview
+
+Originally written by Wouter J. Keller and Jan Willem Keuning in July 2017 in this paper: [Breadth Momentum and Vigilant Asset Allocation (VAA): Winning More by Losing Less](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3002624).
+
+This dynamic asset allocation strategy distinguishes between offensive and defensive assets. If the momentum scores of the offensive assets are all positive, invest 100% in the offensive asset with the highest score. Otherwise, invest 100% in the defensive asset with the highest momentum score among the defensive assets.
+
+VAA (Vigilant Asset Allocation) is similar to the other strategies presented by Wouter J. Keller but with a slightly more stringent hedging method, while offering higher rates of return. The consequence of this approach is that the strategy is outside the market more than 50% of the time (allocation to safe assets).
+
+## Strategy features
+
+<DListItem dt="dual-momentum">
+  It uses both absolute and relative momentum. Historically, absolute momentum has been effective in minimizing losses, while relative momentum has helped generate better returns.
+</DListItem>
+<DListItem dt="13612W momentum filter">
+  The momentum scoring method as a standard for calculating momentum (1, 3, 6, 12 month average), which allows recent trends to be more weighted and reflected in the momentum calculation. <br />
+  [13612W Momentum description](../indicators/momentum#momentum-13612w).
+</DListItem>
+<DListItem dt="cash protection">
+  In the presented strategy, an important role is played by the capital protection factor, which determines the extent to which the portfolio value should be invested in safe assets, in this case, bonds. <br />
+  [Cash protection description](../indicators/cash-protection).
+</DListItem>
+
+### Summary of VAA-G12 aka VAA Balanced
+
+* Assets universes (2): offensive, defensive
+    * Offenssive universe (12): 
+        * ✨ **SPY** - US stock market Large Capitalisation - S&P500 - SPDR S&P 500 ETF
+        * ✨ **QQQ** - US stock market Large Capitalisation - Nasdaq 100 - Invesco QQQ ETF
+        * ✨ **IWM** - US stock market Small Capitalisation - Russell 2000 - iShares Russell 2000 ETF
+        * ✨ **VGK** - European stock market Large Capitalisation - Europe - Vanguard FTSE Europe ETF
+        * ✨ **EWJ** - Japan stock market Large Capitalisation - Japan - iShares MSCI Japan ETF
+        * ✨ **VWO** - Emerging markets Large Capitalisation - Emerging Markets - Vanguard Emerging Markets Stock Index Fund ETF
+        * ✨ **VNQ** - US Real Estate - Real Estate - Vanguard Real Estate Index Fund ETF
+        * ✨ **GLD** - Commodity - Gold - SPDR Gold Trust
+        * ✨ **GSG** - Commodity - Diversified - iShares S&P GSCI Commodity-Indexed Trust
+        * ✨ **HYG** - US Corporate intermediate-term bonds - US Corporate Bond - iShares iBoxx $ High Yield Corporate Bond ETF
+        * ✨ **LQD** - US all-term bonds - US Treasury Bond - iShares iBoxx $ Investment Grade Corporate Bond ETF
+        * ✨ **TLT** - US long-term bonds - US Treasury Bond - iShares 20+ Year Treasury Bond ETF
+    * Defensive universe (3): 
+        * ⭐ **LQD** - US all-term bonds - US Treasury Bond - iShares iBoxx $ Investment Grade Corporate Bond ETF
+        * ⭐ **IEF** - US intermediate-term bonds - US Treasury Bond - iShares 7-10 Year Treasury Bond ETF
+        * ⭐ **SHY** - US short-term bonds - US Treasury Bond - iShares 1-3 Year Treasury Bond ETF
+* Momentum indicator: [13612W](../indicators/momentum#momentum-13612w)
+* Rebalance period: montlhy
+* Top offenssive assets: 5
+* Top deffenssive assets: 1
+
+## Strategy rules
+
+1. Calculate momentum for offenssive and deffenssive assets.
+1. Get list of offenssive assets with positive momentum value.
+1. Get list of defensive assets with positive momentum value.
+1. Obtain the cash protection level. Determine your allocation to cash by finding the number of offenssive assets with a negative momentum score (n).
+    * If n >=4, 100% of the portfolio is invested in the Safe Asset with the highest momentum score
+    * If n=3, invest 75% of the portfolio in the Safe Asset with the highest momentum score.  Invest 25% of the portfolio evenly in the 5 Risk Assets with the highest momentum score (1/5 per asset)
+    * If n=2, invest 50% of the portfolio in the Safe Asset with the highest momentum score.  Invest 50% of the portfolio evenly in the 5 Risk Assets with the highest momentum score (1/5 per asset)
+    * If n=1, 25% of the portfolio in the Safe Asset with the highest momentum score.  Invest 75% of the portfolio evenly in the 5 Risk Assets with the highest momentum score (1/5 per asset)
+    * If n=0,  invest 100% of the portfolio evenly in the 5 Risk Assets with the highest momentum score (1/5 per asset)
+1. Hold all positions until the last trading day of the next month.
+
+## Allocation for recent 13 periods
+
+<AllocationRecent stats={stats.allocations} />

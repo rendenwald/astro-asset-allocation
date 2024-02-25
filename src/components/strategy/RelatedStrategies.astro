@@ -1,0 +1,28 @@
+---
+import { APP_STRATEGY } from "~/utils/config";
+
+import { fetchStrategies, getRelatedStrategies } from "~/utils/strategy";
+import StrategyHighlightedPosts from "../widgets/StrategyHighlightedPosts.astro";
+import type { Strategy } from "~/types";
+import { getStrategyPermalink } from "~/utils/permalinks";
+
+export interface Props {
+  strategy: Strategy;
+}
+
+const { strategy } = Astro.props;
+const fetchedStrategies = await fetchStrategies();
+const relatedStrategies = strategy.tags ? getRelatedStrategies(fetchedStrategies, strategy.slug, strategy.tags) : [];
+---
+
+{
+  APP_STRATEGY.isRelatedStrategiesEnabled ? (
+    <StrategyHighlightedPosts
+      classes={{ container: "pt-0 lg:pt-0 md:pt-0" }}
+      title="Related Strategies"
+      linkText="View All Strategies"
+      linkUrl={getStrategyPermalink()}
+      strategyIds={relatedStrategies.map((strategy) => strategy.id)}
+    />
+  ) : null
+}

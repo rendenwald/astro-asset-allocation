@@ -62,6 +62,36 @@ apps:
 
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
+  strategy:
+    isEnabled: true
+    strategyPostsPerPage: 6
+
+    strategy:
+      isEnabled: true
+      permalink: '/strategy/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: 'strategy' # Blog main path, you can change this to "articles" (/articles)
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: 'strategy_category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'strategy_tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      robots:
+        index: false
+
+    isRelatedStrategiesEnabled: true
+    relatedStrategiesCount: 4
 
 analytics:
   vendors:

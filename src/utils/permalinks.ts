@@ -1,6 +1,6 @@
 import slugify from 'limax';
 
-import { SITE, APP_BLOG } from '~/utils/config';
+import { SITE, APP_BLOG, APP_STRATEGY } from '~/utils/config';
 
 import { trim } from '~/utils/utils';
 
@@ -27,6 +27,12 @@ export const TAG_BASE = cleanSlug(APP_BLOG?.tag?.pathname) || 'tag';
 
 export const POST_PERMALINK_PATTERN = trimSlash(APP_BLOG?.post?.permalink || `${BLOG_BASE}/%slug%`);
 
+export const STRATEGY_BASE = cleanSlug(APP_STRATEGY?.list?.pathname);
+export const STRATEGY_CATEGORY_BASE = cleanSlug(APP_STRATEGY?.category?.pathname);
+export const STRATEGY_TAG_BASE = cleanSlug(APP_STRATEGY?.tag?.pathname) || 'strategy_tag';
+
+export const STRATEGY_PERMALINK_PATTERN = trimSlash(APP_STRATEGY?.strategy?.permalink || `${STRATEGY_BASE}/%slug%`);
+
 /** */
 export const getCanonical = (path = ''): string | URL => {
   const url = String(new URL(path, SITE.site));
@@ -47,11 +53,23 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       permalink = createPath(CATEGORY_BASE, trimSlash(slug));
       break;
 
+    case 'strategy_category':
+      permalink = createPath(STRATEGY_CATEGORY_BASE, trimSlash(slug));
+      break;
+
     case 'tag':
       permalink = createPath(TAG_BASE, trimSlash(slug));
       break;
 
+    case 'strategy_tag':
+      permalink = createPath(STRATEGY_TAG_BASE, trimSlash(slug));
+      break;
+
     case 'post':
+      permalink = createPath(trimSlash(slug));
+      break;
+
+    case 'strategy':
       permalink = createPath(trimSlash(slug));
       break;
 
@@ -69,6 +87,9 @@ export const getHomePermalink = (): string => getPermalink('/');
 
 /** */
 export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);
+
+/** */
+export const getStrategyPermalink = (): string => getPermalink(STRATEGY_BASE);
 
 /** */
 export const getAsset = (path: string): string =>

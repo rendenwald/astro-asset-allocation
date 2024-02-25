@@ -1,0 +1,20 @@
+---
+import Item from '~/components/strategy/ListItem.astro';
+import type { Strategy } from '~/types';
+
+export interface Props {
+  strategies: Array<Strategy>;
+}
+
+const { strategies } = Astro.props;
+---
+
+<ul>
+  {
+    strategies.map((strategy) => (
+      <li class="mb-12 md:mb-20">
+        <Item strategy={strategy} />
+      </li>
+    ))
+  }
+</ul>

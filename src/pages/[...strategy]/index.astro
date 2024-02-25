@@ -1,0 +1,50 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
+import merge from 'lodash.merge';
+import type { ImageMetadata } from 'astro';
+import Layout from '~/layouts/StrategyLayout.astro';
+import SingleStrategy from '~/components/strategy/SingleStrategy.astro';
+import ToStrategyLink from '~/components/strategy/ToStrategyLink.astro';
+
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+import { getStaticPathsStrategyPost, strategyPostRobots } from '~/utils/strategy';
+import { findImage } from '~/utils/images';
+import type { MetaData } from '~/types';
+import RelatedStrategies from '~/components/strategy/RelatedStrategies.astro';
+
+export const prerender = true;
+
+export const getStaticPaths = (async () => {
+  return await getStaticPathsStrategyPost();
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { strategy } = Astro.props as Props;
+
+const url = getCanonical(getPermalink(strategy.permalink, 'strategy'));
+const image = (await findImage(strategy.image)) as ImageMetadata | string | undefined;
+
+const metadata = merge(
+  {
+    title: strategy.title,
+    description: strategy.excerpt,
+    robots: {
+      index: strategyPostRobots?.index,
+      follow: strategyPostRobots?.follow,
+    },
+    openGraph: {
+      type: 'article',
+      ...(image ? { images: [{ url: image, width: (image as ImageMetadata)?.width, height: (image as ImageMetadata)?.height }] } : {}),
+    },
+  },
+  { ...(strategy?.metadata ? { ...strategy.metadata, canonical: strategy.metadata?.canonical || url } : {}) }
+) as MetaData;
+---
+
+<Layout metadata={metadata}>
+  <SingleStrategy strategy={{ ...strategy, image: image }} url={url} />
+  <ToStrategyLink />
+  <RelatedStrategies strategy={strategy} />
+</Layout>

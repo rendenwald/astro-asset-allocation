@@ -1,0 +1,163 @@
+---
+import { Icon } from 'astro-icon/components';
+import { Tabs } from 'astro-tabs';
+import MyTabs from '~/components/common/Tabs.astro';
+
+import Image from '~/components/common/Image.astro';
+import StrategyTags from '~/components/strategy/Tags.astro';
+import SocialShare from '~/components/common/SocialShare.astro';
+
+import { getPermalink } from '~/utils/permalinks';
+import { getFormattedDate } from '~/utils/utils';
+
+import type { Strategy } from '~/types';
+
+export interface Props {
+  strategy: Strategy;
+  url: string | URL;
+}
+
+const { strategy, url } = Astro.props;
+const { Content } = strategy;
+---
+
+<section class="py-8 sm:py-16 lg:py-20 mx-auto">
+  <style is:global>    
+    .tab {
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem/* 8px */;
+      padding-left: 0.25rem/* 4px */;
+      padding-right: 0.25rem/* 4px */;
+      padding-top: 0.75rem/* 12px */;
+      padding-bottom: 0.75rem/* 12px */;
+      
+    }
+  
+    .tab-wrapper {
+      flex-grow: 1;
+    }
+  
+    .tab-selector:checked ~ .tab {
+      position: relative;
+      --tw-text-opacity: 1;
+      color: rgb(29 78 216 / var(--tw-text-opacity));
+    }
+  
+    .tab-selector:checked ~ .tab::after {
+      content: var(--tw-content);
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      height: 0.125rem/* 2px */;
+      width: 100%;
+      --tw-bg-opacity: 1;
+      background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+    }
+  
+    .tab-selector:not(:checked) ~ .tab {
+      display: flex;
+      position: relative;
+      --tw-text-opacity: 1;
+      color: rgb(107 114 128 / var(--tw-text-opacity));
+    }
+    
+    .tab-selector:not(:checked) ~ .tab:hover {
+        --tw-text-opacity: 1;
+        color: rgb(29 78 216 / var(--tw-text-opacity));
+      }
+  </style>
+  <article>
+    <header class={strategy.image ? '' : ''}>
+      <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
+        <p>
+          <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
+          <time datetime={String(strategy.publishDate)} class="inline-block">{getFormattedDate(strategy.publishDate)}</time>
+          {
+            strategy.author && (
+              <>
+                {' '}
+                ·{' '}<Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
+                <span class="inline-block">{strategy.author}</span>
+              </>
+            )
+          }
+          {
+            strategy.category && (
+              <>
+                {' '}
+                ·{' '}
+                <a class="capitalize hover:underline inline-block" href={getPermalink(strategy.category, 'strategy_category')}>
+                  {strategy.category.replaceAll('-', ' ')}
+                </a>
+              </>
+            )
+          }
+          {strategy.readingTime && <> · {strategy.readingTime} min read</>}
+        </p>
+      </div>
+
+      <h1
+        class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
+      >
+        {strategy.title}
+      </h1>
+      <p
+        class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"
+      >
+        {strategy.excerpt}
+      </p>
+
+      {
+        strategy.image ? (
+          <Image
+            src={strategy.image}
+            class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
+            widths={[400, 900]}
+            sizes="(max-width: 900px) 400px, 900px"
+            alt={strategy?.excerpt || ''}
+            width={900}
+            height={506}
+            loading="eager"
+            decoding="async"
+          />
+        ) : (
+          <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="border-t dark:border-slate-700" />
+          </div>
+        )
+      }
+    </header>
+    <div class="space-y-5 max-w-4xl mx-auto">
+      <MyTabs class="pass-your-own-class" class:list={['pass-your-class-list']}>
+        <Fragment slot="tab-1">Overview</Fragment>
+        <Fragment slot="tab-2">Results</Fragment>
+        <Fragment slot="tab-3">Signals</Fragment>
+      
+        <Fragment slot="panel-1">
+          <div
+            class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px]"
+          >
+            {Content ? <Content /> : <Fragment set:html={strategy.content || ''} />}
+          </div>
+        </Fragment>
+      
+        <Fragment slot="panel-2" client:visible>
+          <h2>Panel 2</h2>
+      
+        </Fragment>
+      
+        <Fragment slot="panel-3" client:visible>
+          <h2>Panel 3</h2>
+        </Fragment>
+      </MyTabs>
+  </div>
+    
+    <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
+      <StrategyTags tags={strategy.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
+      <SocialShare url={url} text={strategy.title} class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600" />
+    </div>
+  </article>
+</section>

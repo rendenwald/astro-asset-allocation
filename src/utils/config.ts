@@ -60,6 +60,44 @@ export interface AppBlogConfig {
     };
   };
 }
+export interface AppStrategyConfig {
+  isEnabled: boolean;
+  strategyPostsPerPage: number;
+  isRelatedStrategiesEnabled: boolean;
+  relatedStrategiesCount: number;
+  strategy: {
+    isEnabled: boolean;
+    permalink: string;
+    robots: {
+      index: boolean;
+      follow: boolean;
+    };
+  };
+  list: {
+    isEnabled: boolean;
+    pathname: string;
+    robots: {
+      index: boolean;
+      follow: boolean;
+    };
+  };
+  category: {
+    isEnabled: boolean;
+    pathname: string;
+    robots: {
+      index: boolean;
+      follow: boolean;
+    };
+  };
+  tag: {
+    isEnabled: boolean;
+    pathname: string;
+    robots: {
+      index: boolean;
+      follow: boolean;
+    };
+  };
+}
 export interface AnalyticsConfig {
   vendors: {
     googleAnalytics: {
@@ -75,6 +113,7 @@ const config = yaml.load(fs.readFileSync('src/config.yaml', 'utf8')) as {
   i18n?: I18NConfig;
   apps?: {
     blog?: AppBlogConfig;
+    strategy?: AppStrategyConfig;
   };
   ui?: unknown;
   analytics?: unknown;
@@ -177,6 +216,49 @@ const getAppBlog = () => {
   return merge({}, _default, config?.apps?.blog ?? {}) as AppBlogConfig;
 };
 
+const getAppStrategy = () => {
+  const _default = {
+    isEnabled: false,
+    strategyPostsPerPage: 6,
+    isRelatedStrategiesEnabled: false,
+    relatedStrategiesCount: 4,
+    strategy: {
+      isEnabled: true,
+      permalink: '/strategy/%slug%',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    list: {
+      isEnabled: true,
+      pathname: 'strategy',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    category: {
+      isEnabled: true,
+      pathname: 'strategy_category',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    tag: {
+      isEnabled: true,
+      pathname: 'strategy_tag',
+      robots: {
+        index: false,
+        follow: true,
+      },
+    },
+  };
+
+  return merge({}, _default, config?.apps?.strategy ?? {}) as AppStrategyConfig;
+};
+
 const getUI = () => {
   const _default = {
     theme: 'system',
@@ -204,5 +286,6 @@ export const SITE = getSite();
 export const I18N = getI18N();
 export const METADATA = getMetadata();
 export const APP_BLOG = getAppBlog();
+export const APP_STRATEGY = getAppStrategy();
 export const UI = getUI();
 export const ANALYTICS = getAnalytics();
