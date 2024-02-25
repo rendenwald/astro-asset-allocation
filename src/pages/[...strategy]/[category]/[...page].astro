@@ -1,9 +1,9 @@
 ---
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
-import { startegyCategoryRobots, getStaticPathsStrategyCategory } from '~/utils/strategy';
+import { strategyCategoryRobots, getStaticPathsStrategyCategory } from '~/utils/strategy';
 
 import Layout from '~/layouts/PageLayout.astro';
-import StartegyList from '~/components/strategy/List.astro';
+import StrategyList from '~/components/strategy/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 
@@ -22,8 +22,8 @@ const currentPage = page.currentPage ?? 1;
 const metadata = {
   title: `Category '${category}' ${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
   robots: {
-    index: startegyCategoryRobots?.index,
-    follow: startegyCategoryRobots?.follow,
+    index: strategyCategoryRobots?.index,
+    follow: strategyCategoryRobots?.follow,
   },
 };
 ---
@@ -31,7 +31,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline><span class="capitalize">{category.replaceAll('-', ' ')}</span></Headline>
-    <StartegyList strategies={page.data} />
+    <StrategyList strategies={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
 </Layout>

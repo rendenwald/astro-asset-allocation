@@ -1,6 +1,6 @@
 ---
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
-import { startegyTagRobots, getStaticPathsStrategyTag } from '~/utils/strategy';
+import { strategyTagRobots, getStaticPathsStrategyTag } from '~/utils/strategy';
 
 import Layout from '~/layouts/PageLayout.astro';
 import StrategyList from '~/components/strategy/List.astro';
@@ -22,8 +22,8 @@ const currentPage = page.currentPage ?? 1;
 const metadata = {
   title: `Strategies by tag '${tag}'${currentPage > 1 ? ` — Page ${currentPage} ` : ''}`,
   robots: {
-    index: startegyTagRobots?.index,
-    follow: startegyTagRobots?.follow,
+    index: strategyTagRobots?.index,
+    follow: strategyTagRobots?.follow,
   },
 };
 ---
