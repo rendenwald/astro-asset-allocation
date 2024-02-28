@@ -1,6 +1,6 @@
 site:
-  name: AstroAllocation
-  site: 'https://astroallocation.netlify.app'
+  name: GoodAllocation
+  site: 'https://goodallocation.netlify.app'
   base: '/'
   trailingSlash: false
 
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroAllocation
-    template: '%s — AstroAllocation'
+    default: GoodAllocation
+    template: '%s — GoodAllocation'
   description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroAllocation
+    site_name: GoodAllocation
     images:
       - url: '~/assets/images/default.png'
         width: 1200

@@ -15,6 +15,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "yaml.schemas": {
-    "./.vscode/astroallocation/config-schema.json": "/src/config.yaml"
+    "./.vscode/goodallocation/config-schema.json": "/src/config.yaml"
   }
 }
