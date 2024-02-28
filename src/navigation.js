@@ -8,6 +8,19 @@ export const headerData = {
     },
     {
       text: 'Strategies',
+      links: [
+        {
+          text: 'Descriptions',
+          href: getPermalink('/strategy'),
+        },
+        {
+          text: 'Compare',
+          href: getPermalink('/strategies/portfolios'),
+        },
+      ],
+    },
+    {
+      text: 'Strategies',
       href: getPermalink('strategies/portfolios'),
     },
     {

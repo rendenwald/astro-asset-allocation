@@ -23,34 +23,19 @@ const metadata = {
   <PromoSection
   actions={[
     {
-      text: 'Explore winning strategies',
+      text: 'Explore strategies',
       href: '/strategies/portfolios',
       icon: 'flat-color-icons:engineering',
     },
+    { 
+      text: 'Blog', 
+      href: '/blog',
+      icon: 'tabler:article',
+    },
   ]}
-    title="Best strategies"
-  />
-
-  <!-- Hero Widget ******************* -->
-
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Strategies',
-        href: '/strategies/portfolios',
-        icon: 'flat-color-icons:engineering',
-      },
-      { 
-        text: 'Blog', 
-        href: '/blog',
-        icon: 'tabler:article',
-      },
-    ]}
-    image={{ src: '~/assets/images/hero.png', alt: 'AstroAllocation Hero Image' }}
   >
     <Fragment slot="title">
-      Helping You find the <span class="text-accent dark:text-white highlight"> Perfect Strategy</span>
+      Helping You find the <span class="text-orange-400 dark:text-white highlight"> Perfect Strategy</span>
       <span class="hidden xl:inline"> Over 50 years history data</span>
     </Fragment>
 
@@ -60,10 +45,10 @@ const metadata = {
         strategies with over 50 years of backtests.</span
       >
       <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroAllocation: free to use.</span>
-       Assisting you in discovering the ideal strategy tailored to your needs and objectives. Whether in business,
-      finance, or any other endeavor, we're here to help you find the perfect approach for success.
+      Assisting you in discovering the ideal strategy tailored to your needs and objectives.
     </Fragment>
-  </Hero>
+  </PromoSection>
+
 
   <!-- Note Widget ******************* -->
 
